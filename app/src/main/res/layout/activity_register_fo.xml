@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".RegisterFO">
+
+    <LinearLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:background="@drawable/greenhalf">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Register User"
+            android:textSize="35sp"
+            android:textColor="@color/green_leaves1"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center_horizontal"
+        android:padding="15dp">
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:id="@+id/tilFullName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            app:hintEnabled="false"
+            app:helperText="Required*"
+            app:startIconDrawable="@drawable/baseline_person_24"
+            app:helperTextTextColor="@color/red"
+            app:boxStrokeColor="@color/light_grey">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTxtFullName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="Yes"
+                android:hint="Full Name"
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                android:textColor="@color/light_grey"
+                android:textColorHint="@color/light_grey"
+                tools:ignore="VisualLintTextFieldSize" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilUsername"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            app:hintEnabled="false"
+            app:helperText="Required*"
+            app:helperTextTextColor="@color/red"
+            app:startIconDrawable="@drawable/baseline_person_24"
+            app:boxStrokeColor="@color/light_grey">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTxtUsername"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="Yes"
+                android:hint="@string/username_entering_field"
+                android:inputType="textPersonName"
+                android:textColor="@color/light_grey"
+                android:textColorHint="@color/light_grey"
+                tools:ignore="VisualLintTextFieldSize" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <LinearLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="85dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/TxtRegisterUserAs"
+                android:textColor="@color/grey"
+                android:text="Register User : "
+                android:textStyle="bold"
+                android:padding="10dp" />
+
+            <RadioGroup
+                android:id="@+id/radioGroupUserRole"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/radioAdmin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Admin" />
+
+                <RadioButton
+                    android:id="@+id/radioFO"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="48dp"
+                    android:text="Field Officer" />
+            </RadioGroup>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/Province"
+                android:textColor="@color/grey"
+                android:text="Province"
+                android:textStyle="bold" />
+
+            <Spinner
+                android:id="@+id/ProvincePicker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtDatePicker"
+                android:textColor="@color/grey"
+                android:text="District"
+                android:textStyle="bold"
+                android:padding="10dp" />
+
+            <Spinner
+                android:id="@+id/DivisionPicker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:padding="10dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/VillageServiceDomain"
+                android:textColor="@color/grey"
+                android:text="Divisional Secretariat"
+                android:textStyle="bold"
+                android:padding="10dp" />
+
+            <Spinner
+                android:id="@+id/VillageServiceDomainPicker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:padding="10dp" />
+        </LinearLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilPassword"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:minHeight="48dp"
+            app:hintEnabled="false"
+            app:startIconDrawable="@drawable/baseline_lock_24"
+            app:boxStrokeColor="@color/light_grey">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTxtPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="Yes"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:textColor="@color/light_grey"
+                android:textColorHint="@color/light_grey"
+                tools:ignore="VisualLintTextFieldSize" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilCnfPassword"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            app:hintEnabled="false"
+            app:helperText="Required*"
+            app:helperTextTextColor="@color/red"
+            app:startIconDrawable="@drawable/baseline_lock_24"
+            app:boxStrokeColor="@color/light_grey">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTxtCnfPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="Yes"
+                android:hint="Confirm Password"
+                android:inputType="textPassword"
+                android:textColor="@color/light_grey"
+                android:textColorHint="@color/light_grey"
+                tools:ignore="VisualLintTextFieldSize" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btnRegister"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/dark_green"
+            android:text="REGISTER HERE"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:cornerRadius="200dp"
+            tools:ignore="VisualLintBounds,VisualLintButtonSize" />
+    </LinearLayout>
+</LinearLayout>

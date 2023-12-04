@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EachFOPerformance"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardViewGraph"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="15dp"
+            android:elevation="10dp"
+            app:cardCornerRadius="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Performance of Field Officer"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginLeft="15dp"
+                android:textColor="@color/black"/>
+
+            <!--Linear layout to display pie chart-->
+            <!-- and details of pie chart-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+             <!--Pie chart to display the data-->
+                <org.eazegraph.lib.charts.PieChart
+                    android:id="@+id/pie_chart"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:padding="6dp"
+                    android:layout_weight="1"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginBottom="1dp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginBottom="1dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center_vertical">
+
+                        <!--View to Display the Total Tasks Icon-->
+                        <View
+                            android:layout_width="15dp"
+                            android:layout_height="match_parent"
+                            android:background="#DFFF00" />
+
+                        <!--Text View to display Total Tasks -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="10dp"
+                            android:text="Opened Tasks" />
+
+                    </LinearLayout>
+
+                    <!--Linear layout to display  Completed Tasks-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginTop="5dp">
+
+                        <!--View to Display the  Completed Tasks Icon-->
+                        <View
+                            android:layout_width="15dp"
+                            android:layout_height="match_parent"
+                            android:background="#9DC44D" />
+
+                        <!--Text View to Display Completed Tasks Text -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="10dp"
+                            android:text="Completed Tasks" />
+
+                    </LinearLayout>
+
+                    <!--Linear Layout to Display In Progress Tasks-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginTop="5dp">
+
+                        <!--View to Display the In Progress Tasks Icon-->
+                        <View
+                            android:layout_width="15dp"
+                            android:layout_height="match_parent"
+                            android:background="#FFBF00" />
+
+                        <!--Text view to display In Progress text -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="10dp"
+                            android:text="In Progress Tasks" />
+
+                    </LinearLayout>
+
+                    <!--Linear Layout to Display On Hold Tasks-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginTop="5dp">
+
+                        <!--View to Display the On Hold Tasks Icon-->
+                        <View
+                            android:layout_width="15dp"
+                            android:layout_height="match_parent"
+                            android:background="#B5AC95" />
+
+                        <!--Text View to Display On Hold Tasks Text -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="10dp"
+                            android:text="On Hold Tasks" />
+                    </LinearLayout>
+
+                    <!--Linear layout to display  Rejected Tasks-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginTop="5dp">
+
+                        <!--View to Display the  Rejected  Tasks Icon-->
+                        <View
+                            android:layout_width="15dp"
+                            android:layout_height="match_parent"
+                            android:background="#DE3163" />
+
+                        <!--Text View to Display Rejected Tasks Text -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="10dp"
+                            android:text="Rejected Tasks" />
+
+                    </LinearLayout>
+
+                    <!--Linear layout to display  Accepted Tasks-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginTop="5dp">
+
+                        <!--View to Display the  Accepted  Tasks Icon-->
+                        <View
+                            android:layout_width="15dp"
+                            android:layout_height="match_parent"
+                            android:background="#FF7F50" />
+
+                        <!--Text View to Display Accepted Tasks Text -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="10dp"
+                            android:text="Accepted Tasks" />
+                    </LinearLayout>
+
+
+                    <!--Linear layout to display  Incompleted Tasks-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginTop="5dp">
+
+                        <!--View to Display the  Incompleted  Tasks Icon-->
+                        <View
+                            android:layout_width="15dp"
+                            android:layout_height="match_parent"
+                            android:background="#40E0D0" />
+
+                        <!--Text View to Display Incompleted Tasks Text -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="10dp"
+                            android:text="Incompleted Tasks" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/BtnShowAnalytics"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Show Analytics"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/catalogue_color"
+            android:background="@null"
+            android:textStyle="bold"
+            android:onClick="newEventAction"
+            android:layout_gravity="center"
+            android:layout_below="@id/cardViewGraph"
+            android:textSize="20sp"/>
+
+<!--        <androidx.cardview.widget.CardView-->
+<!--            android:layout_width="319dp"-->
+<!--            android:layout_height="190dp"-->
+<!--            android:layout_below="@+id/BtnShowAnalytics"-->
+<!--            android:layout_alignParentEnd="true"-->
+<!--            android:layout_alignParentBottom="true"-->
+<!--            android:layout_marginTop="67dp"-->
+<!--            android:layout_marginEnd="29dp"-->
+<!--            android:layout_marginBottom="111dp">-->
+
+<!--            <com.github.mikephil.charting.charts.LineChart-->
+<!--                android:id="@+id/chart1"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="200dp"-->
+<!--                />-->
+<!--        </androidx.cardview.widget.CardView>-->
+    </RelativeLayout>
+
+</LinearLayout>

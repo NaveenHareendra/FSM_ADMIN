@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Graph</title>
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+          integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script type="text/javascript" src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+
+</head>
+
+<div class="container-fluid">
+
+    <div class="row pt-2">
+        <div class="col-sm-12">
+            <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+        </div>
+    </div>
+
+</div>
+
+
+
+<script>
+    const xValues = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    const yValues = [${all}];
+    const y2Values = [${completed}];
+    const y3Values = [${leftover}];
+
+    new Chart("myChart", {
+        type: "line",
+        data: {
+            labels: xValues,
+            datasets: [
+                {
+                fill: false,
+                lineTension: 0,
+                backgroundColor: "rgba(0,0,255,1.0)",
+                borderColor: "rgba(0,0,255,0.6)",
+                data: yValues,
+                label: "All tasks"
+                },
+                {
+                fill: false,
+                lineTension: 0,
+                backgroundColor: "rgb(21,77,0)",
+                borderColor: "rgba(132,248,90,0.6)",
+                data: y2Values,
+                label: "Completed tasks"
+                },                {
+                fill: false,
+                lineTension: 0,
+                backgroundColor: "rgb(116,1,1)",
+                borderColor: "rgba(116,1,1,0.6)",
+                data: y3Values,
+                label: "Leftover tasks"
+                },
+
+            ]
+        },
+        options: {
+            legend: {display: true},
+            scales: {
+                yAxes: [
+                    {
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Tasks'
+                        },
+                        ticks: {
+                            beginAtZero: true,
+                            precision: 0,
+                        }
+                    },
+
+
+                ],
+                xAxes: [
+                    {
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Month'
+                        }
+                    },
+
+
+                ],
+            },
+            min: 0,
+        },
+
+    });
+
+</script>
+
+</body>
+</html>

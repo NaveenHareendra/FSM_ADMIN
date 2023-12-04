@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:orientation="vertical"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/divisionchart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintTop_toBottomOf="@id/AdminProfile"
+        tools:context=".DivisionRecyclerViewAdapter">
+
+    <!--<TextView
+        android:id="@+id/VillageServiceDomainsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="6dp"
+        android:textSize="16sp"
+        android:text="Village Service Domains"
+        android:textColor="@color/orange"
+        app:layout_constraintStart_toEndOf="@id/AdminProfile"
+        app:layout_constraintTop_toTopOf="parent"/>-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="0dp"
+        android:weightSum="2">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/ShowAnalyticsCardView"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/cat_background">
+
+            <ImageView
+                android:id="@+id/ImageViewFarmerOne"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/farmer" />
+
+            <!--"@+id/TextViewDSC"-->
+            <TextView
+                android:id= "@+id/TextViewFOName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Field Officer Name"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/TextViewAGSCCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="0dp"
+                android:text="Count"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/ImageViewFarmerOne"
+                app:layout_constraintStart_toStartOf="@+id/TextViewFOName"
+                app:layout_constraintTop_toBottomOf="@+id/TextViewFOName" />
+
+            <ImageView
+                android:id="@+id/ImageViewPerformance"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:padding="5dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="100dp"
+                android:layout_marginBottom="5dp"
+                android:src="@drawable/baseline_pie_chart_outline_24_white"
+                app:layout_constraintBottom_toBottomOf="@+id/TextViewAGSCCount"
+                app:layout_constraintStart_toStartOf="@+id/TextViewFOName"
+                app:layout_constraintTop_toBottomOf="@+id/TextViewFOName" />
+
+            <ImageView
+                android:id="@+id/ImageViewDownloadReport"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:padding="5dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="100dp"
+                android:layout_marginBottom="5dp"
+                android:src="@drawable/baseline_arrow_circle_down_24_white"
+                app:layout_constraintLeft_toRightOf="@id/ImageViewPerformance"
+                app:layout_constraintBottom_toBottomOf="@+id/TextViewAGSCCount"
+                app:layout_constraintTop_toBottomOf="@+id/TextViewFOName" />
+
+            <ImageView
+                android:id="@+id/ImageViewTrackLocation"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:padding="5dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="100dp"
+                android:layout_marginBottom="5dp"
+                android:src="@drawable/baseline_share_location_24"
+                app:layout_constraintLeft_toRightOf="@id/ImageViewDownloadReport"
+                app:layout_constraintBottom_toBottomOf="@+id/TextViewAGSCCount"
+                app:layout_constraintTop_toBottomOf="@+id/TextViewFOName" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+    </LinearLayout>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="CustomAlertDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <!-- Set the background color -->
+        <item name="android:background">@color/white</item>
+
+        <!-- Customize text appearance -->
+        <item name="android:textColor">@color/catalogue_color</item>
+    </style>
+</resources>

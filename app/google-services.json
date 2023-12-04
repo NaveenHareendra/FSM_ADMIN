@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "498790444426",
+    "firebase_url": "https://agrisiteclient-default-rtdb.firebaseio.com",
+    "project_id": "agrisiteclient",
+    "storage_bucket": "agrisiteclient.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:498790444426:android:0bb5f2829d85f134132c73",
+        "android_client_info": {
+          "package_name": "com.example.agrisite"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "498790444426-oi2pn5l6i3nkv9kb4dfqab5r9ei5b2rr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyApX3R0Regm9a357LGar0dfZirq7VG5Z24"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "498790444426-oi2pn5l6i3nkv9kb4dfqab5r9ei5b2rr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:498790444426:android:d848d545105bc5a7132c73",
+        "android_client_info": {
+          "package_name": "com.example.agrisiteclient"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "498790444426-oi2pn5l6i3nkv9kb4dfqab5r9ei5b2rr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyApX3R0Regm9a357LGar0dfZirq7VG5Z24"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "498790444426-oi2pn5l6i3nkv9kb4dfqab5r9ei5b2rr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
