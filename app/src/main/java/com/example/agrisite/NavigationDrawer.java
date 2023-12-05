@@ -82,6 +82,7 @@ public class NavigationDrawer extends AppCompatActivity {
         setContentView(R.layout.activity_navigation_drawer);
 
         obj = FirebaseDatabase.getInstance().getReference().child("Users");
+
         View regFoIcon = findViewById(R.id.bookmark);
 
         regFoIcon.setOnClickListener(new View.OnClickListener() {
@@ -98,6 +99,10 @@ public class NavigationDrawer extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(NavigationDrawer.this, DvisionPreview.class);
+                intent.putExtra("full_name_of_user", fullnameFromDB);
+                intent.putExtra("selectedDivision", DivisionFromDB);
+                intent.putExtra("selectedVSDomain", VSDomainFromDB);
+                intent.putExtra("userID", userIDFromDB);
                 startActivity(intent);
             }
         });
@@ -108,6 +113,11 @@ public class NavigationDrawer extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(NavigationDrawer.this, TaskPreview.class);
+                intent.putExtra("full_name_of_user", fullnameFromDB);
+                intent.putExtra("selectedDivision", DivisionFromDB);
+                intent.putExtra("selectedVSDomain", VSDomainFromDB);
+                intent.putExtra("userID", userIDFromDB);
+
                 startActivity(intent);
             }
         });
@@ -117,7 +127,11 @@ public class NavigationDrawer extends AppCompatActivity {
         myProfileAct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(NavigationDrawer.this, ProfilePage.class);
+                Intent intent = new Intent(NavigationDrawer.this, MyProfileActivity.class);
+                intent.putExtra("full_name_of_user", fullnameFromDB);
+                intent.putExtra("selectedDivision", DivisionFromDB);
+                intent.putExtra("selectedVSDomain", VSDomainFromDB);
+                intent.putExtra("userID", userIDFromDB);
                 startActivity(intent);
             }
         });
