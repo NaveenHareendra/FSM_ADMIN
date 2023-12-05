@@ -29,6 +29,7 @@ import android.widget.Toast;
 
 import com.google.android.material.bottomappbar.BottomAppBar;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -81,7 +82,45 @@ public class NavigationDrawer extends AppCompatActivity {
         setContentView(R.layout.activity_navigation_drawer);
 
         obj = FirebaseDatabase.getInstance().getReference().child("Users");
+        View regFoIcon = findViewById(R.id.bookmark);
 
+        regFoIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(NavigationDrawer.this, RegisterFO.class);
+                startActivity(intent);
+            }
+        });
+
+        FloatingActionButton divisionPreviewbtn = findViewById(R.id.floatBtn);
+
+        divisionPreviewbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(NavigationDrawer.this, DvisionPreview.class);
+                startActivity(intent);
+            }
+        });
+
+        View taskPreviewIcon = findViewById(R.id.notifications);
+
+        taskPreviewIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(NavigationDrawer.this, TaskPreview.class);
+                startActivity(intent);
+            }
+        });
+
+        View myProfileAct = findViewById(R.id.profile);
+
+        myProfileAct.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(NavigationDrawer.this, ProfilePage.class);
+                startActivity(intent);
+            }
+        });
         drawerLayout = findViewById(R.id.drawerlayout);
         navigationView = findViewById(R.id.navigationView);
         // bottomAppBar = findViewById(R.id.bottomAppBar);

@@ -796,15 +796,16 @@
                         android:visibility="visible">
 
                         <com.google.android.material.floatingactionbutton.FloatingActionButton
+                            android:id="@+id/floatBtn"
                             android:layout_width="60dp"
                             android:layout_height="wrap_content"
                             android:backgroundTint="#9DC44D"
+                            android:contentDescription="TODO"
                             android:src="@drawable/donutchart"
                             app:layout_anchor="@+id/appbar"
                             app:layout_anchorGravity="center"
                             app:maxImageSize="30dp"
-                            app:tint="@color/white"
-                            android:contentDescription="TODO" />
+                            app:tint="@color/white" />
                     </LinearLayout>
 
                     <LinearLayout
