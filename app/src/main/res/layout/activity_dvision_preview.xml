@@ -9,14 +9,14 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="240dp"
+        android:layout_height="110dp"
         android:layout_marginEnd="0dp"
         android:layout_marginStart="0dp"
         android:layout_marginTop="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:background="@drawable/bgheader"/>
+        android:background="@color/catalogue_color"/>
 
     <ImageView
         android:id="@+id/AdminProfile"
@@ -29,45 +29,33 @@
         app:srcCompat="@drawable/profile_admin"/>
 
     <TextView
-        android:id="@+id/AdminNameText"
+        android:id="@+id/AdminDivisionText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="18dp"
         android:layout_marginTop="32dp"
         android:textSize="16sp"
-        android:text="Admin Name"
+        android:text="DO Name"
         android:textColor="@color/white"
         app:layout_constraintStart_toEndOf="@id/AdminProfile"
         app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
-        android:id="@+id/AdminDivisionText"
+        android:id="@+id/AdminNameText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="18dp"
         android:layout_marginTop="8dp"
         android:textSize="16sp"
-        android:text="Admin Division"
+        android:text="DO Division"
         android:textColor="@color/white"
         app:layout_constraintStart_toEndOf="@id/AdminProfile"
-        app:layout_constraintTop_toBottomOf="@+id/AdminNameText"/>
-
-    <TextView
-        android:id="@+id/VillageServiceDomainsText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="180dp"
-        android:textSize="16sp"
-        android:text="List of FO Under My Area"
-        android:textColor="@color/orange"
-        app:layout_constraintStart_toEndOf="@id/AdminProfile"
-        app:layout_constraintTop_toTopOf="@id/AdminProfile"/>
+        app:layout_constraintTop_toBottomOf="@+id/AdminDivisionText"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="250dp"
+        android:layout_marginTop="120dp"
         android:id="@+id/AGSCDomain_preview_recycle_view"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

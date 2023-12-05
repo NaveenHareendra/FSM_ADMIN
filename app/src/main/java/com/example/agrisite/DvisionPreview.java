@@ -19,7 +19,7 @@ import java.util.Objects;
 
 public class DvisionPreview extends AppCompatActivity {
     TextView AdminNameText,AdminDivisionText;
-    String DivisionFromDB, userIDFromDB, VSDomainFromDB, fullnameFromDB;
+    String DivisionFromDB, userIDFromDB, VSDomainFromDB, fullnameFromDB, AgrarianName;
     private final DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
     private List<FOName> FOItemList = new ArrayList<>();
     private DivisionRecyclerViewAdapter adapter;
@@ -52,15 +52,16 @@ public class DvisionPreview extends AppCompatActivity {
                 // Getting all children users from "Users" whose role is field officer & division is similar to admin's division
                 for (DataSnapshot userSnapshot : snapshot.child("Users").getChildren()) {
 
-                    if (userSnapshot.hasChild("full_name_of_user") && userSnapshot.hasChild("selectedDivision") && userSnapshot.hasChild("selectedRole")) {
+                    if (userSnapshot.hasChild("full_name_of_user") && userSnapshot.hasChild("selectedDivision") && userSnapshot.hasChild("selectedRole") && userSnapshot.hasChild("selectedVSDomain")) {
 
                         String fullName = userSnapshot.child("full_name_of_user").getValue(String.class);
                         String selecteddivision = userSnapshot.child("selectedDivision").getValue(String.class);
                         String Role = userSnapshot.child("selectedRole").getValue(String.class);
+                        String AgrarianName = userSnapshot.child("selectedVSDomain").getValue(String.class);
 
                         if (selecteddivision != null && selecteddivision.equals(DivisionFromDB) && (Objects.equals(Role, "Field Officer"))){
                             String uid = userSnapshot.getKey();
-                            FOName foName = new FOName(fullName,uid);
+                            FOName foName = new FOName(fullName,uid,AgrarianName);
                             FOItemList.add(foName);
                         }
                     }
@@ -93,7 +94,9 @@ public class DvisionPreview extends AppCompatActivity {
         Log.d("DivisionPreview", "selectedVSDomain: " + VSDomainFromDB);
         Log.d("DivisionPreview", "userID: " + userIDFromDB);
 
-        AdminNameText.setText(fullnameFromDB);
-        AdminDivisionText.setText(DivisionFromDB);
+        AdminNameText.setText("Division Officer - " + fullnameFromDB);
+        AdminDivisionText.setText("Field Officers Under " + DivisionFromDB + " Division");
+
+
     }
 }

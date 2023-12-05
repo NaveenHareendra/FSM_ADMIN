@@ -22,6 +22,12 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:background="@color/catalogue_color">
+
+            <LinearLayout
+                android:layout_width="20dp"
+                android:layout_height="50dp"
+                android:orientation="horizontal"
+                android:background="@color/brownish_green" />
         </LinearLayout>
 
         <LinearLayout
@@ -46,6 +52,18 @@
                 android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:text="Task Owner"
+                android:singleLine="true"
+                android:alpha="0.5"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                android:id="@+id/TaskOwner"/>
+
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:text="Description"
                 android:singleLine="true"
                 android:alpha="0.5"
@@ -61,7 +79,7 @@
 
                 <TextView
                     android:layout_marginTop="10dp"
-                    android:layout_width="220dp"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:text="Starting Date"
                     android:singleLine="true"
@@ -82,55 +100,56 @@
                     android:id="@+id/Start_of_Task"/>
             </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:weightSum="2">
-
-            <TextView
-                android:layout_marginTop="10dp"
-                android:layout_width="220dp"
-                android:layout_height="wrap_content"
-                android:text="Ending Date"
-                android:singleLine="true"
-                android:alpha="0.5"
-                android:textColor="@android:color/black"
-                android:textSize="20sp"
-                android:id="@+id/TVEnd_of_Task"/>
-
-            <TextView
-                android:layout_marginTop="10dp"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Ending Date"
-                android:singleLine="true"
-                android:alpha="0.5"
-                android:textColor="@android:color/black"
-                android:textSize="20sp"
-                android:id="@+id/End_of_Task"/>
-        </LinearLayout>
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="2">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/orange"
-                android:text="COMPLETED"
-                android:textSize="16sp"
-                android:textAllCaps="true"
-                android:id="@+id/Task_Status"
-                android:layout_gravity="right"
-                android:layout_marginTop="3dp"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:paddingTop="5dp"
-                android:paddingBottom="5dp"/>
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:text="Ending Date"
+                    android:singleLine="true"
+                    android:alpha="0.5"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp"
+                    android:id="@+id/TVEnd_of_Task"/>
+
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Ending Date"
+                    android:singleLine="true"
+                    android:alpha="0.5"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp"
+                    android:id="@+id/End_of_Task"/>
+            </LinearLayout>
+
+            <!--           <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:textColor="@color/orange"
+                           android:text="COMPLETED"
+                           android:textSize="16sp"
+                           android:textAllCaps="true"
+                           android:id="@+id/Task_Status"
+                           android:layout_gravity="right"
+                           android:layout_marginTop="3dp"
+                           android:paddingLeft="10dp"
+                           android:paddingRight="10dp"
+                           android:paddingTop="5dp"
+                           android:paddingBottom="5dp"/>-->
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:gravity="right"
+                android:layout_marginTop="15dp"
                 android:padding="0dp">
 
                 <Button
@@ -141,17 +160,19 @@
                     android:text="X"
                     android:layout_marginLeft="100dp"
                     android:textColor="#FFFFFF"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    app:cornerRadius="200dp"/>
 
                 <Button
                     android:id="@+id/btnAccept"
-                    android:layout_width="120dp"
+                    android:layout_width="150dp"
                     android:layout_height="60dp"
                     android:backgroundTint="@color/catalogue_color"
                     android:text="ACCEPT"
                     android:layout_marginLeft="8dp"
                     android:textColor="#FFFFFF"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    app:cornerRadius="200dp"/>
             </LinearLayout>
 
 

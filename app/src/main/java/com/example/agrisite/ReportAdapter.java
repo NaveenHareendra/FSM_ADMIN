@@ -47,17 +47,18 @@ public class ReportAdapter {
         // Set text for total tasks
         TextView totalTasksTextView = view.findViewById(R.id.total_tasks);
         totalTasksTextView.setText(String.valueOf(totalTasks));
+
         // Set text for completed tasks
         TextView completedTasksTextView = view.findViewById(R.id.completed_tasks);
         completedTasksTextView.setText(String.valueOf(completedTasks));
 
         // Set text for completion ratio
         TextView completionRatioTextView = view.findViewById(R.id.completion_ratio);
-        completionRatioTextView.setText((completionRatio) + "%");
+        completionRatioTextView.setText((completionRatio*100) + "%");
 
         // Set text for incompleted ratio
         TextView incompletionRatioTextView = view.findViewById(R.id.incompletion_ratio);
-        incompletionRatioTextView.setText((incompletionRatio) + "%");
+        incompletionRatioTextView.setText((incompletionRatio*100) + "%");
 
         return view;
     }

@@ -8,23 +8,32 @@
     android:orientation="vertical"
     tools:context=".RegisterFO">
 
-    <LinearLayout
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+   <!-- <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:gravity="center_horizontal"
-        android:orientation="vertical"
-        android:background="@drawable/greenhalf">
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/catalogue_color"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />-->
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Register User"
-            android:textSize="35sp"
-            android:textColor="@color/green_leaves1"
-            android:textStyle="bold"
-            android:layout_marginTop="10dp"/>
-    </LinearLayout>
+   <LinearLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:background="@color/catalogue_color">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Register User"
+                android:textSize="20sp"
+                android:textColor="@color/brown"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"/>
+        </LinearLayout>
+
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -90,12 +99,55 @@
             android:layout_marginTop="10dp"
             android:orientation="horizontal">
 
-            <TextView
+
+
+            <!--User Role Selection-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:text="User Role"
+                    android:textColor="@color/grey"
+                    android:textStyle="bold"
+                    android:singleLine="true"
+                    android:id="@+id/TxtRegisterUserAs"/>
+
+                <RadioGroup
+                    android:id="@+id/radioGroupUserRole"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/radioAdmin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/catalogue_color"
+                        android:text="Admin" />
+
+                    <RadioButton
+                        android:id="@+id/radioFO"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/catalogue_color"
+                        android:minHeight="48dp"
+                        android:text="Field Officer" />
+                </RadioGroup>-->
+            </LinearLayout>
+
+            <!--<TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/TxtRegisterUserAs"
                 android:textColor="@color/grey"
-                android:text="Register User : "
+                android:text="User Role : "
                 android:textStyle="bold"
                 android:padding="10dp" />
 
@@ -117,73 +169,91 @@
                     android:layout_height="wrap_content"
                     android:minHeight="48dp"
                     android:text="Field Officer" />
-            </RadioGroup>
+            </RadioGroup>-->
         </LinearLayout>
+
+
+        <!--Province Picker-->
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="horizontal"
-            android:padding="10dp">
+            android:weightSum="2">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_width="180dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/Province"
-                android:textColor="@color/grey"
                 android:text="Province"
-                android:textStyle="bold" />
+                android:textColor="@color/grey"
+                android:textStyle="bold"
+                android:singleLine="true"
+                android:id="@+id/TVStart_of_Task"/>
 
             <Spinner
                 android:id="@+id/ProvincePicker"
-                android:layout_width="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:minHeight="48dp" />
         </LinearLayout>
 
+
+        <!--Division Picker-->
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="2">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_width="180dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/txtDatePicker"
+                android:text="Division"
                 android:textColor="@color/grey"
-                android:text="District"
+                android:singleLine="true"
                 android:textStyle="bold"
-                android:padding="10dp" />
+                android:id="@+id/txtDivision"/>
 
             <Spinner
                 android:id="@+id/DivisionPicker"
-                android:layout_width="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
-                android:minHeight="48dp"
-                android:padding="10dp" />
+                android:minHeight="48dp" />
         </LinearLayout>
+
+
+
+        <!--Village Service Domain Picker-->
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="2">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_width="180dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/VillageServiceDomain"
+                android:text="Village Service Domain"
                 android:textColor="@color/grey"
-                android:text="Divisional Secretariat"
+                android:singleLine="true"
                 android:textStyle="bold"
-                android:padding="10dp" />
+                android:id="@+id/VillageServiceDomain"/>
 
             <Spinner
                 android:id="@+id/VillageServiceDomainPicker"
-                android:layout_width="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
-                android:minHeight="48dp"
-                android:padding="10dp" />
+                android:minHeight="48dp" />
         </LinearLayout>
+
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tilPassword"
@@ -232,16 +302,41 @@
                 tools:ignore="VisualLintTextFieldSize" />
         </com.google.android.material.textfield.TextInputLayout>
 
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="5dp"
+            android:padding="0dp">
+
         <Button
             android:id="@+id/btnRegister"
-            android:layout_width="match_parent"
+            android:layout_width="150dp"
             android:layout_height="60dp"
             android:layout_marginTop="10dp"
-            android:backgroundTint="@color/dark_green"
-            android:text="REGISTER HERE"
+            android:backgroundTint="@color/catalogue_color"
+            android:text="REGISTER"
+            android:layout_marginRight="10dp"
             android:textColor="@color/white"
             android:textSize="18sp"
             app:cornerRadius="200dp"
             tools:ignore="VisualLintBounds,VisualLintButtonSize" />
+
+        <Button
+            android:id="@+id/btnClear"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/catalogue_color"
+            android:text="CLEAR"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:cornerRadius="200dp"
+            tools:ignore="VisualLintBounds,VisualLintButtonSize" />
+        </LinearLayout>
+
     </LinearLayout>
 </LinearLayout>

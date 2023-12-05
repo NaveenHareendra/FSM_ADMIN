@@ -46,15 +46,16 @@ public class TaskRecycleViewAdapter extends RecyclerView.Adapter<TaskRecycleView
         TaskItems tasks = items.get(position);
 
         holder.title.setText(tasks.getTitle());
+        holder.FullName.setText(tasks.getFullName());
         holder.description.setText(tasks.getDescription());
         holder.startdate.setText(tasks.getStartdate());
         holder.enddate.setText(tasks.getEnddate());
-        holder.taskstatus.setText(tasks.getTaskstatus());
+        //holder.taskstatus.setText(tasks.getTaskstatus());
 
         holder.btnAccept.setOnClickListener(view -> {
 
             // Update the task status to "IN PROGRESS" in the TextView
-            holder.taskstatus.setText("Accepted");
+            //holder.taskstatus.setText("Accepted");
 
             // Update the task status to "IN PROGRESS" in the Firebase Database
             updateTaskStatus(tasks.getKey(), "Accepted");
@@ -78,7 +79,7 @@ public class TaskRecycleViewAdapter extends RecyclerView.Adapter<TaskRecycleView
         // Add the buttons
         builder.setPositiveButton("Yes", (dialog, which) -> {
             // Update the task status to "REJECTED" in the Firebase Database
-            holder.taskstatus.setText("Rejected");
+            //holder.taskstatus.setText("Rejected");
 
             updateTaskStatus(taskKey, "Rejected");
         });
@@ -99,17 +100,19 @@ public class TaskRecycleViewAdapter extends RecyclerView.Adapter<TaskRecycleView
     }
 
     static class MyViewHolder extends RecyclerView.ViewHolder {
-        private final TextView title, description, startdate, enddate, taskstatus;
+        private final TextView title, FullName,description, startdate, enddate /*, taskstatus*/;
         Button btnAccept, btnReject;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
             title = itemView.findViewById(R.id.Title_of_Task);
+            FullName = itemView.findViewById(R.id.TaskOwner);
             description = itemView.findViewById(R.id.Description_of_Task);
             startdate = itemView.findViewById(R.id.Start_of_Task);
             enddate = itemView.findViewById(R.id.End_of_Task);
-            taskstatus = itemView.findViewById(R.id.Task_Status);
+
+            //taskstatus = itemView.findViewById(R.id.Task_Status);
 
             btnAccept = itemView.findViewById(R.id.btnAccept);
             btnReject = itemView.findViewById(R.id.btnReject);

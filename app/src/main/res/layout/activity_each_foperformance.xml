@@ -5,8 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EachFOPerformance"
-    android:orientation="vertical">
+    tools:context=".EachFOPerformance">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -15,7 +14,7 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/cardViewGraph"
             android:layout_width="match_parent"
-            android:layout_height="300dp"
+            android:layout_height="350dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginTop="15dp"
@@ -25,9 +24,11 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Performance of Field Officer"
+                android:id="@+id/TaskAnalytics_Title"
+                android:text="Task Analytics"
                 android:textSize="18sp"
                 android:textStyle="bold"
+                android:layout_marginTop="15dp"
                 android:layout_marginLeft="15dp"
                 android:textColor="@color/black"/>
 
@@ -40,14 +41,15 @@
                 android:orientation="horizontal"
                 android:weightSum="2">
 
-             <!--Pie chart to display the data-->
+                <!--Pie chart to display the data-->
                 <org.eazegraph.lib.charts.PieChart
+
                     android:id="@+id/pie_chart"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:padding="6dp"
                     android:layout_weight="1"
-                    android:layout_marginTop="30dp"
+                    android:layout_marginTop="50dp"
                     android:layout_marginLeft="15dp"
                     android:layout_marginBottom="1dp" />
 
@@ -55,7 +57,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="20dp"
-                    android:layout_marginTop="30dp"
+                    android:layout_marginTop="50dp"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
                     android:gravity="center_vertical"
@@ -219,33 +221,19 @@
         <Button
             android:id="@+id/BtnShowAnalytics"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Show Analytics"
+            android:layout_height="60dp"
+            android:text="PERFORMANCE ANALYTICS"
             android:textColor="@color/white"
             android:backgroundTint="@color/catalogue_color"
             android:background="@null"
             android:textStyle="bold"
             android:onClick="newEventAction"
-            android:layout_gravity="center"
             android:layout_below="@id/cardViewGraph"
-            android:textSize="20sp"/>
+            android:layout_marginTop="15dp"
+            app:cornerRadius="200dp"
+            android:textSize="18sp"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_vertical"/>
 
-<!--        <androidx.cardview.widget.CardView-->
-<!--            android:layout_width="319dp"-->
-<!--            android:layout_height="190dp"-->
-<!--            android:layout_below="@+id/BtnShowAnalytics"-->
-<!--            android:layout_alignParentEnd="true"-->
-<!--            android:layout_alignParentBottom="true"-->
-<!--            android:layout_marginTop="67dp"-->
-<!--            android:layout_marginEnd="29dp"-->
-<!--            android:layout_marginBottom="111dp">-->
-
-<!--            <com.github.mikephil.charting.charts.LineChart-->
-<!--                android:id="@+id/chart1"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="200dp"-->
-<!--                />-->
-<!--        </androidx.cardview.widget.CardView>-->
     </RelativeLayout>
-
 </LinearLayout>

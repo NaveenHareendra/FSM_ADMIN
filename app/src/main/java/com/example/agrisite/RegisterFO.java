@@ -10,8 +10,11 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
+import android.widget.Toolbar;
+
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -27,11 +30,16 @@ public class RegisterFO extends AppCompatActivity {
     TextInputEditText fullname, username, password, confirmP;
     Spinner province, division, VSDomain;
     RadioButton radio_Admin, radio_FO;
+    RadioGroup radioGroupUserRole;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_fo);
+
+/*        Toolbar toolbar= findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);*/
 
         obj = FirebaseDatabase.getInstance().getReference().child("Users");
 
@@ -90,11 +98,13 @@ public class RegisterFO extends AppCompatActivity {
         confirmP = findViewById(R.id.editTxtCnfPassword);
 
         //REFERENCE FOR Radio Buttons
+        radioGroupUserRole = findViewById(R.id.radioGroupUserRole);
         radio_Admin = findViewById(R.id.radioAdmin);
         radio_FO = findViewById(R.id.radioFO);
 
         //REFERENCE FOR BUTTON
         Button btnRegister = findViewById(R.id.btnRegister);
+        Button btnClear = findViewById(R.id.btnClear);
 
         //REFERENCES FOR ALL THREE ARRAYS
         province = findViewById(R.id.ProvincePicker);
@@ -385,11 +395,29 @@ public class RegisterFO extends AppCompatActivity {
         btnRegister.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick (View v){
+                /*if (validateFullName(fullname.getText().toString()) &&
+                        validateUsername(username.getText().toString()) &&
+                        validatePassword(password.getText().toString()) &&
+                        validateCnfPassword(confirmP.getText().toString()) &&
+                        CheckIfSamePassword(password.getText().toString(), confirmP.getText().toString())) {
+*/
+                    // Validation successful, proceed to insert user data
+                    InsertUserData();
+                }
+            //}
+        });
 
-                //Call the InsertData method
-                InsertUserData();
-
-
+        btnClear.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                fullname.setText("");
+                username.setText("");
+                password.setText("");
+                confirmP.setText("");
+                radioGroupUserRole.clearCheck();
+                province.setSelection(0);
+                division.setSelection(0);
+                VSDomain.setSelection(0);
             }
         });
     }
@@ -458,6 +486,8 @@ public class RegisterFO extends AppCompatActivity {
             return true;
         }
     }
+
+
     private boolean validateFullName(String fullName){
         String noWhiteSpace = "\\A\\w{4,20}\\z";
 
@@ -477,14 +507,14 @@ public class RegisterFO extends AppCompatActivity {
 
     private boolean validatePassword(String password) {
         String passwordVal = "^" +
-                //"(?=.*[0-9])" +         //at least 1 digit
-                //"(?=.*[a-z])" +         //at least 1 lower case letter
-                //"=.*[A-Z])" +         //at least 1 upper case letter
+                 "(?=.*[0-9])" +         //at least 1 digit
+                 //"(?=.*[a-z])" +         //at least 1 lower case letter
+                 //"=.*[A-Z])" +         //at least 1 upper case letter
                 "(?=.*[a-zA-Z])" +      //any letter
-                "(?=.*[@#$%^&+=])" +    //at least 1 special character
+                //"(?=.*[@#$%^&+=])" +    //at least 1 special character
                 "(?=\\S+$)" +           //no white spaces
-                ".{4,}" +               //at least 4 characters
-                "$";
+                ".{4,}" ;              //at least 4 characters
+                 //"$";
 
         if (TextUtils.isEmpty(password)) {
             TextInputEditText editText = findViewById(R.id.editTxtPassword);

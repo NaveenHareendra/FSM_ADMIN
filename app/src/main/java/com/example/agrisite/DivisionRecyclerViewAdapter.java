@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -37,6 +38,7 @@ public class DivisionRecyclerViewAdapter extends RecyclerView.Adapter<DivisionRe
         FOName uid = items.get(position);
 
         holder.TextViewFOName.setText(foName.getFull_name_of_user());
+        holder.TextViewAGS.setText(foName.getAgrarianName() + " Agrarian Service Center");
     }
 
     @Override
@@ -48,8 +50,8 @@ public class DivisionRecyclerViewAdapter extends RecyclerView.Adapter<DivisionRe
     class MyViewHolder extends RecyclerView.ViewHolder {
 
         // Declaring TextViews
-        private final TextView TextViewFOName;
-        private final ImageView ImageViewShowPerformance, ImageViewTrackLocation, ImageViewDownloadReports;
+        private final TextView TextViewFOName, TextViewAGS;
+        private final ImageView ImageViewShowPerformance, ImageViewTrackLocation, ImageViewDownloadReports, ImageViewTrackPreviousLocation;
         private final ConstraintLayout ShowAnalyticsCardView;
 
         public MyViewHolder(@NonNull View itemView) {
@@ -57,11 +59,13 @@ public class DivisionRecyclerViewAdapter extends RecyclerView.Adapter<DivisionRe
 
             // Getting TextViews from division_recycler_view_adapter_layout XML file
             TextViewFOName = itemView.findViewById(R.id.TextViewFOName);
+            TextViewAGS = itemView.findViewById(R.id.TextViewAGS);
 
             ShowAnalyticsCardView = itemView.findViewById(R.id.ShowAnalyticsCardView);
             ImageViewShowPerformance = itemView.findViewById(R.id.ImageViewPerformance);
             ImageViewDownloadReports = itemView.findViewById(R.id.ImageViewDownloadReport);
             ImageViewTrackLocation = itemView.findViewById(R.id.ImageViewTrackLocation);
+            ImageViewTrackPreviousLocation = itemView.findViewById(R.id.ImageViewTrackPreviousLocation);
 
             //Opens the Each FO Performance Activity
             ImageViewShowPerformance.setOnClickListener(view -> {
@@ -98,6 +102,7 @@ public class DivisionRecyclerViewAdapter extends RecyclerView.Adapter<DivisionRe
 
             });
 
+            //Opens the FieldOfficerLocation Activity
             ImageViewTrackLocation.setOnClickListener(view -> {
                 FOName foName = items.get(getAdapterPosition());
                 FOName uid = items.get(getAdapterPosition());
@@ -108,6 +113,24 @@ public class DivisionRecyclerViewAdapter extends RecyclerView.Adapter<DivisionRe
                 j.putExtra("FIELD_OFFICER_ID", foName.getUid());
 
                 itemView.getContext().startActivity(j);
+
+                // Print to verify values
+                Log.d("THE FO NAME CAME to DRVA", "Full Name: " + foName.getFull_name_of_user());
+                Log.d("THE FO ID CAME DRVA", "FO ID: " + uid.getUid());
+
+            });
+
+            //Opens the FieldOfficerPreviousLocation Activity
+            ImageViewTrackPreviousLocation.setOnClickListener(view -> {
+                FOName foName = items.get(getAdapterPosition());
+                FOName uid = items.get(getAdapterPosition());
+
+                Intent k = new Intent(itemView.getContext(), FieldOfficerLocation.class);
+
+                k.putExtra("FIELD_OFFICER_NAME", foName.getFull_name_of_user());
+                k.putExtra("FIELD_OFFICER_ID", foName.getUid());
+
+                itemView.getContext().startActivity(k);
 
                 // Print to verify values
                 Log.d("THE FO NAME CAME to DRVA", "Full Name: " + foName.getFull_name_of_user());

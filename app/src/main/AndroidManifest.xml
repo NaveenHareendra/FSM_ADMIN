@@ -17,6 +17,9 @@
         android:theme="@style/Theme.AgriSite"
         tools:targetApi="31">
         <activity
+            android:name=".FOPreviousLocation"
+            android:exported="false" />
+        <activity
             android:name=".FieldOfficerLocation"
             android:exported="false" />
         <activity

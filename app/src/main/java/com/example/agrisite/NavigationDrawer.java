@@ -1,12 +1,15 @@
 package com.example.agrisite;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import android.Manifest;
 import android.content.Intent;
@@ -25,6 +28,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomappbar.BottomAppBar;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -38,6 +42,7 @@ import org.eazegraph.lib.models.PieModel;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.Objects;
 
 public class NavigationDrawer extends AppCompatActivity {
     DrawerLayout drawerLayout;
@@ -79,7 +84,7 @@ public class NavigationDrawer extends AppCompatActivity {
 
         drawerLayout = findViewById(R.id.drawerlayout);
         navigationView = findViewById(R.id.navigationView);
-       // bottomAppBar = findViewById(R.id.bottomAppBar);
+        // bottomAppBar = findViewById(R.id.bottomAppBar);
 
         AdminNameText = findViewById(R.id.AdminNameText);
 
@@ -119,7 +124,6 @@ public class NavigationDrawer extends AppCompatActivity {
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(MenuItem item) {
-
                 int itemId = item.getItemId();
 
                 if (itemId == R.id.nav_home) {
@@ -127,13 +131,13 @@ public class NavigationDrawer extends AppCompatActivity {
                     drawerLayout.closeDrawer(GravityCompat.START);
 
                 } else if (itemId == R.id.nav_addfo) {
-                    Log.i("MENU_DRAWER_TAG", "Task item is clicked");
+                    Log.i("MENU_DRAWER_TAG", "Register Field Officer item is clicked");
                     Intent i = new Intent(NavigationDrawer.this, RegisterFO.class);
                     startActivity(i);
                     drawerLayout.closeDrawer(GravityCompat.START);
 
                 } else if (itemId == R.id.nav_taskboard) {
-                    Log.i("MENU_DRAWER_TAG", "Reports item is clicked");
+                    Log.i("MENU_DRAWER_TAG", "Task Preview item is clicked");
 
                     Intent i = new Intent(NavigationDrawer.this, TaskPreview.class);
 
@@ -152,8 +156,8 @@ public class NavigationDrawer extends AppCompatActivity {
                     Intent i = new Intent(NavigationDrawer.this, DvisionPreview.class);
 
                     i.putExtra("full_name_of_user", fullnameFromDB);
-                    i.putExtra("selectedVSDomain", VSDomainFromDB);
                     i.putExtra("selectedDivision", DivisionFromDB);
+                    i.putExtra("selectedVSDomain", VSDomainFromDB);
                     i.putExtra("userID", userIDFromDB);
 
                     Toast.makeText(NavigationDrawer.this, "Selected Division : " +DivisionFromDB, Toast.LENGTH_SHORT).show();
@@ -162,30 +166,7 @@ public class NavigationDrawer extends AppCompatActivity {
 
                     drawerLayout.closeDrawer(GravityCompat.START);
 
-                } else if (itemId == R.id.nav_analytics) {
-                    /*Log.i("MENU_DRAWER_TAG", "FO Analytics item is clicked");
-
-                    Intent i = new Intent(NavigationDrawer.this, xyz.class);
-
-                    i.putExtra("full_name_of_user", fullnameFromDB);
-                    i.putExtra("selectedVSDomain", VSDomainFromDB);
-                    i.putExtra("userID", userIDFromDB);
-
-                    startActivity(i);*/
-
-                } else if (itemId == R.id.nav_reports) {
-                Log.i("MENU_DRAWER_TAG", "Download Reports item is clicked");
-
-                Intent i = new Intent(NavigationDrawer.this, DownlaodReports.class);
-
-                i.putExtra("full_name_of_user", fullnameFromDB);
-                i.putExtra("selectedVSDomain", VSDomainFromDB);
-                i.putExtra("selectedDivision", DivisionFromDB);
-                i.putExtra("userID", userIDFromDB);
-
-                startActivity(i);
-
-            } else if(itemId == R.id.nav_profile){
+                } else if(itemId == R.id.nav_profile){
                     Log.i("MENU_DRAWER_TAG", "Profile item is clicked");
 
                     Intent i = new Intent(NavigationDrawer.this,MyProfileActivity.class);
@@ -203,7 +184,7 @@ public class NavigationDrawer extends AppCompatActivity {
 
         // Get the task count of each division
         DatabaseReference tasksRef = FirebaseDatabase.getInstance().getReference("Tasks");
-        Query querySameDomainTask = tasksRef.orderByChild("vsdomainFromDB").equalTo(VSDomainFromDB);
+        Query querySameDomainTask = tasksRef.orderByChild("divisionFromDB").equalTo(DivisionFromDB);
 
         querySameDomainTask.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -261,7 +242,6 @@ public class NavigationDrawer extends AppCompatActivity {
                 // Handle database error
             }
         });
-
     }
 
     public void showUserData() {
@@ -294,79 +274,4 @@ public class NavigationDrawer extends AppCompatActivity {
 
         chart.startAnimation();
     }
-
-
-
-
-   /* private boolean checkPermission() {
-        return ContextCompat.checkSelfPermission(this, android.Manifest.permission.WRITE_EXTERNAL_STORAGE)
-                == PackageManager.PERMISSION_GRANTED;
-    }
-
-    private void askPermissions() {
-        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, REQUEST_CODE);
-    }
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (requestCode == REQUEST_CODE) {
-            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                // Permission granted, proceed with creating PDF
-                createPDF();
-            } else {
-                Toast.makeText(this, "Permission denied. Cannot create PDF.", Toast.LENGTH_SHORT).show();
-            }
-        }
-    }
-
-    private void createPDF() {
-        // Create a new PdfDocument
-        PdfDocument document = new PdfDocument();
-
-        // Create a page info with the desired dimensions
-        PdfDocument.PageInfo pageInfo = new PdfDocument.PageInfo.Builder(1080, 1920, 1).create();
-
-        // Start a page
-        PdfDocument.Page page = document.startPage(pageInfo);
-
-        // Get the Canvas from the page
-        android.graphics.Canvas canvas = page.getCanvas();
-
-        // Create a Paint object for styling
-        Paint paint = new Paint();
-        paint.setColor(android.graphics.Color.RED);
-        paint.setTextSize(42);
-
-        // Specify the text and position to draw
-        String text = "Hello, World";
-        float x = 500;
-        float y = 900;
-
-        // Draw the text on the Canvas
-        canvas.drawText(text, x, y, paint);
-
-        // Finish the page
-        document.finishPage(page);
-
-        // Create a file in the Downloads directory
-        File downloadsDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
-        String fileName = "example.pdf";
-        File file = new File(downloadsDir, fileName);
-
-        try {
-            // Write the PDF content to the file
-            FileOutputStream fos = new FileOutputStream(file);
-            document.writeTo(fos);
-
-            // Close the document
-            document.close();
-            fos.close();
-            Toast.makeText(this, "PDF created successfully!", Toast.LENGTH_SHORT).show();
-        } catch (IOException e) {
-            Log.e("CreatePDF", "Error creating PDF", e);
-        }
-    }*/
 }
-
-

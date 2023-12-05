@@ -136,6 +136,9 @@ public class DownlaodReports extends AppCompatActivity {
 
                     TaskItems task = snapshot.getValue(TaskItems.class);
 
+                    Log.d("DownloadReports", "Task Status: " + task.getTaskstatus());
+
+
                     // Check if the task belongs to the selected date range and field officer
                     if (isTaskWithinDateRange(task)) {
                         totalTasks++;
@@ -153,7 +156,7 @@ public class DownlaodReports extends AppCompatActivity {
 
                 float completionRatio = totalTasks == 0 ? 0 : ((float) completedTasks / totalTasks);
 
-                float incompletionRatio = ((float)(totalTasks - completedTasks)/totalTasks);
+                float incompletionRatio = ((float) (totalTasks - completedTasks)/totalTasks);
 
                 //Toast.makeText(DownloadReports.this, "COMPLETION RATIO: " +completionRatio, Toast.LENGTH_SHORT).show();
                 //Toast.makeText(DownloadReports.this, "INCOMPLETION RATIO: " +incompletionRatio, Toast.LENGTH_SHORT).show();
@@ -260,7 +263,7 @@ public class DownlaodReports extends AppCompatActivity {
         uid = intent.getStringExtra("FIELD_OFFICER_ID");
 
         // Now you have the foName and uid, you can use them as needed
-        Log.d("DownloadReports", "FIELD_OFFICER_NAME: " + foName);
-        Log.d("DownloadReports", "FIELD_OFFICER_ID: " + uid);
+        Log.d("DownloadReports Hi", "FIELD_OFFICER_NAME: " + foName);
+        Log.d("DownloadReports Hi", "FIELD_OFFICER_ID: " + uid);
     }
 }

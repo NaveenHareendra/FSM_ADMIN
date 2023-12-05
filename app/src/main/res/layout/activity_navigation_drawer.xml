@@ -9,849 +9,850 @@
     android:id="@+id/drawerlayout"
     tools:context=".NavigationDrawer">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:focusable="true"
-            android:focusableInTouchMode="true">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
 
-            <ScrollView
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/AdminProfile"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_marginStart="32dp"
+                        android:layout_marginTop="32dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/profile_admin"/>
+
+                    <TextView
+                        android:id="@+id/WelcomeText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Welcome Back"
+                        android:textSize="18sp"
+                        android:layout_marginStart="32dp"
+                        android:textColor="@color/black"
+                        app:layout_constraintStart_toEndOf="@+id/AdminProfile"
+                        app:layout_constraintTop_toTopOf="@+id/AdminProfile" />
+
+                    <TextView
+                        android:id="@+id/AdminNameText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="0dp"
+                        android:text="G.Dahanayake"
+                        android:textColor="@color/black"
+                        android:textSize="27sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@+id/AdminProfile"
+                        app:layout_constraintStart_toStartOf="@+id/WelcomeText"
+                        app:layout_constraintTop_toBottomOf="@+id/WelcomeText" />
+
+                    <ImageView
+                        android:id="@+id/AppIcon"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        app:layout_constraintBottom_toBottomOf="@id/AdminProfile"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginEnd="22dp"
+                        app:layout_constraintTop_toTopOf="@id/AdminProfile"
+                        app:srcCompat="@drawable/appicon"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="90dp"
                     android:orientation="vertical">
 
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <ImageView
-                            android:id="@+id/AdminProfile"
-                            android:layout_width="80dp"
-                            android:layout_height="80dp"
-                            android:layout_marginStart="32dp"
-                            android:layout_marginTop="32dp"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:srcCompat="@drawable/profile_admin"/>
-
-                        <TextView
-                            android:id="@+id/WelcomeText"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Welcome Back"
-                            android:textSize="18sp"
-                            android:layout_marginStart="32dp"
-                            android:textColor="@color/black"
-                            app:layout_constraintStart_toEndOf="@+id/AdminProfile"
-                            app:layout_constraintTop_toTopOf="@+id/AdminProfile" />
-
-                        <TextView
-                            android:id="@+id/AdminNameText"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="0dp"
-                            android:text="G.Dahanayake"
-                            android:textColor="@color/black"
-                            android:textSize="27sp"
-                            android:textStyle="bold"
-                            app:layout_constraintBottom_toBottomOf="@+id/AdminProfile"
-                            app:layout_constraintStart_toStartOf="@+id/WelcomeText"
-                            app:layout_constraintTop_toBottomOf="@+id/WelcomeText" />
-
-                        <ImageView
-                            android:id="@+id/AppIcon"
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            app:layout_constraintBottom_toBottomOf="@id/AdminProfile"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            android:layout_marginEnd="22dp"
-                            app:layout_constraintTop_toTopOf="@id/AdminProfile"
-                            app:srcCompat="@drawable/appicon"/>
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="90dp"
-                        android:orientation="vertical">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:orientation="horizontal">
-
-                            <androidx.constraintlayout.widget.ConstraintLayout
-                                android:layout_width="0dp"
-                                android:layout_height="70dp"
-                                android:layout_weight="0.5"
-                                android:layout_marginStart="32dp"
-                                android:layout_marginEnd="8dp"
-                                android:background="@drawable/cat_background">
-
-                                <ImageView
-                                    android:id="@+id/ImageViewAllTasks"
-                                    android:layout_width="45dp"
-                                    android:layout_height="45dp"
-                                    android:layout_marginEnd="8dp"
-                                    app:layout_constraintBottom_toBottomOf="parent"
-                                    app:layout_constraintEnd_toEndOf="parent"
-                                    app:layout_constraintTop_toTopOf="parent"
-                                    app:srcCompat="@drawable/boxes2" />
-
-                                <TextView
-                                    android:id="@+id/TextViewAllTasks"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="16dp"
-                                    android:text="Total"
-                                    android:textColor="@color/white"
-                                    android:textSize="16sp"
-                                    android:textStyle="bold"
-                                    app:layout_constraintBottom_toBottomOf="parent"
-                                    app:layout_constraintStart_toStartOf="parent"
-                                    app:layout_constraintTop_toTopOf="parent" />
-
-
-                                <TextView
-                                    android:id="@+id/TextViewAllTasksCount"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="0dp"
-                                    android:text="Count"
-                                    android:textColor="@color/white"
-                                    android:textSize="16sp"
-                                    android:textStyle="bold"
-                                    app:layout_constraintBottom_toBottomOf="@+id/ImageViewAllTasks"
-                                    app:layout_constraintStart_toStartOf="@+id/TextViewAllTasks"
-                                    app:layout_constraintTop_toBottomOf="@+id/TextViewAllTasks" />
-                            </androidx.constraintlayout.widget.ConstraintLayout>
-
-                            <androidx.constraintlayout.widget.ConstraintLayout
-                                android:layout_width="0dp"
-                                android:layout_height="70dp"
-                                android:layout_weight="0.5"
-                                android:layout_marginStart="8dp"
-                                android:layout_marginEnd="32dp"
-                                android:background="@drawable/cat_background">
-
-                                <ImageView
-                                    android:id="@+id/ImageViewOpenedTasks"
-                                    android:layout_width="45dp"
-                                    android:layout_height="45dp"
-                                    android:layout_marginEnd="8dp"
-                                    app:layout_constraintBottom_toBottomOf="parent"
-                                    app:layout_constraintEnd_toEndOf="parent"
-                                    app:layout_constraintTop_toTopOf="parent"
-                                    app:srcCompat="@drawable/open"/>
-
-                                <TextView
-                                    android:id="@+id/TextViewOpenedTasks"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="16dp"
-                                    app:layout_constraintBottom_toBottomOf="parent"
-                                    app:layout_constraintStart_toStartOf="parent"
-                                    app:layout_constraintTop_toTopOf="parent"
-                                    android:text="Opened"
-                                    android:textStyle="bold"
-                                    android:textSize="16sp"
-                                    android:textColor="@color/white" />
-
-                                <TextView
-                                    android:id="@+id/TextViewOpenedTasksCount"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="0dp"
-                                    android:text="Count"
-                                    android:textColor="@color/white"
-                                    android:textSize="16sp"
-                                    android:textStyle="bold"
-                                    app:layout_constraintBottom_toBottomOf="@+id/ImageViewOpenedTasks"
-                                    app:layout_constraintStart_toStartOf="@+id/TextViewOpenedTasks"
-                                    app:layout_constraintTop_toBottomOf="@+id/TextViewOpenedTasks" />
-
-                            </androidx.constraintlayout.widget.ConstraintLayout>
-                        </LinearLayout>
-                    </LinearLayout>
-
-                    <!--2nd Linear Layout-->
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="80dp"
-                        android:orientation="vertical">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="0dp"
-                            android:orientation="horizontal">
-
-                            <androidx.constraintlayout.widget.ConstraintLayout
-                                android:layout_width="0dp"
-                                android:layout_height="70dp"
-                                android:layout_weight="0.5"
-                                android:layout_marginStart="32dp"
-                                android:layout_marginEnd="8dp"
-                                android:background="@drawable/cat_background">
-
-                                <ImageView
-                                    android:id="@+id/ImageViewInProgressTasks"
-                                    android:layout_width="45dp"
-                                    android:layout_height="45dp"
-                                    android:layout_marginEnd="8dp"
-                                    app:layout_constraintBottom_toBottomOf="parent"
-                                    app:layout_constraintEnd_toEndOf="parent"
-                                    app:layout_constraintTop_toTopOf="parent"
-                                    app:srcCompat="@drawable/inprogress" />
-
-                                <TextView
-                                    android:id="@+id/TextViewInprogressTasks"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="16dp"
-                                    android:text="In Progress"
-                                    android:textColor="@color/white"
-                                    android:textSize="16sp"
-                                    android:textStyle="bold"
-                                    app:layout_constraintBottom_toBottomOf="parent"
-                                    app:layout_constraintStart_toStartOf="parent"
-                                    app:layout_constraintTop_toTopOf="parent" />
-
-                                <TextView
-                                    android:id="@+id/TextViewInprogressTasksCount"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="0dp"
-                                    android:text="Count"
-                                    android:textColor="@color/white"
-                                    android:textSize="16sp"
-                                    android:textStyle="bold"
-                                    app:layout_constraintBottom_toBottomOf="@+id/ImageViewInProgressTasks"
-                                    app:layout_constraintStart_toStartOf="@+id/TextViewInprogressTasks"
-                                    app:layout_constraintTop_toBottomOf="@+id/TextViewInprogressTasks" />
-                            </androidx.constraintlayout.widget.ConstraintLayout>
-
-                            <androidx.constraintlayout.widget.ConstraintLayout
-                                android:layout_width="0dp"
-                                android:layout_height="70dp"
-                                android:layout_weight="0.5"
-                                android:layout_marginStart="8dp"
-                                android:layout_marginEnd="32dp"
-                                android:background="@drawable/cat_background">
-
-                                <ImageView
-                                    android:id="@+id/ImageViewOnHoldTasks"
-                                    android:layout_width="45dp"
-                                    android:layout_height="45dp"
-                                    android:layout_marginEnd="8dp"
-                                    app:layout_constraintBottom_toBottomOf="parent"
-                                    app:layout_constraintEnd_toEndOf="parent"
-                                    app:layout_constraintTop_toTopOf="parent"
-                                    app:srcCompat="@drawable/holdtasks"/>
-
-                                <TextView
-                                    android:id="@+id/TextViewOnHoldTasks"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="16dp"
-                                    app:layout_constraintBottom_toBottomOf="parent"
-                                    app:layout_constraintStart_toStartOf="parent"
-                                    app:layout_constraintTop_toTopOf="parent"
-                                    android:text="On Hold"
-                                    android:textStyle="bold"
-                                    android:textSize="16sp"
-                                    android:textColor="@color/white" />
-
-                                <TextView
-                                    android:id="@+id/TextViewOnHoldTasksCount"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="0dp"
-                                    android:text="Count"
-                                    android:textColor="@color/white"
-                                    android:textSize="16sp"
-                                    android:textStyle="bold"
-                                    app:layout_constraintBottom_toBottomOf="@+id/ImageViewOnHoldTasks"
-                                    app:layout_constraintStart_toStartOf="@+id/TextViewOnHoldTasks"
-                                    app:layout_constraintTop_toBottomOf="@+id/TextViewOnHoldTasks" />
-                            </androidx.constraintlayout.widget.ConstraintLayout>
-                        </LinearLayout>
-                    </LinearLayout>
-
-
-                    <!--3rd Linear Layout-->
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="80dp"
-                        android:orientation="vertical">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="0dp"
-                            android:orientation="horizontal">
-
-                            <androidx.constraintlayout.widget.ConstraintLayout
-                                android:layout_width="0dp"
-                                android:layout_height="70dp"
-                                android:layout_weight="0.5"
-                                android:layout_marginStart="32dp"
-                                android:layout_marginEnd="8dp"
-                                android:background="@drawable/cat_background">
-
-                                <ImageView
-                                    android:id="@+id/ImageViewCompletedTasks"
-                                    android:layout_width="45dp"
-                                    android:layout_height="45dp"
-                                    android:layout_marginEnd="8dp"
-                                    app:layout_constraintBottom_toBottomOf="parent"
-                                    app:layout_constraintEnd_toEndOf="parent"
-                                    app:layout_constraintTop_toTopOf="parent"
-                                    app:srcCompat="@drawable/alltotal" />
-
-                                <TextView
-                                    android:id="@+id/TextViewCompletedTasks"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="16dp"
-                                    android:text="Completed"
-                                    android:textColor="@color/white"
-                                    android:textSize="16sp"
-                                    android:textStyle="bold"
-                                    app:layout_constraintBottom_toBottomOf="parent"
-                                    app:layout_constraintStart_toStartOf="parent"
-                                    app:layout_constraintTop_toTopOf="parent" />
-
-
-                                <TextView
-                                    android:id="@+id/TextViewCompletedTasksCount"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="0dp"
-                                    android:text="Count"
-                                    android:textColor="@color/white"
-                                    android:textSize="16sp"
-                                    android:textStyle="bold"
-                                    app:layout_constraintBottom_toBottomOf="@+id/ImageViewCompletedTasks"
-                                    app:layout_constraintStart_toStartOf="@+id/TextViewCompletedTasks"
-                                    app:layout_constraintTop_toBottomOf="@+id/TextViewCompletedTasks" />
-                            </androidx.constraintlayout.widget.ConstraintLayout>
-
-                            <androidx.constraintlayout.widget.ConstraintLayout
-                                android:layout_width="0dp"
-                                android:layout_height="70dp"
-                                android:layout_weight="0.5"
-                                android:layout_marginStart="8dp"
-                                android:layout_marginEnd="32dp"
-                                android:background="@drawable/cat_background">
-
-                                <ImageView
-                                    android:id="@+id/ImageViewInCompletedTasks"
-                                    android:layout_width="45dp"
-                                    android:layout_height="45dp"
-                                    android:layout_marginEnd="8dp"
-                                    app:layout_constraintBottom_toBottomOf="parent"
-                                    app:layout_constraintEnd_toEndOf="parent"
-                                    app:layout_constraintTop_toTopOf="parent"
-                                    app:srcCompat="@drawable/warningstar"/>
-
-                                <TextView
-                                    android:id="@+id/TextViewInCompletedTasks"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="16dp"
-                                    app:layout_constraintBottom_toBottomOf="parent"
-                                    app:layout_constraintStart_toStartOf="parent"
-                                    app:layout_constraintTop_toTopOf="parent"
-                                    android:text="Incompleted"
-                                    android:textStyle="bold"
-                                    android:textSize="16sp"
-                                    android:textColor="@color/white" />
-
-                                <TextView
-                                    android:id="@+id/TextViewInCompletedTasksCount"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="0dp"
-                                    android:text="Count"
-                                    android:textColor="@color/white"
-                                    android:textSize="16sp"
-                                    android:textStyle="bold"
-                                    app:layout_constraintBottom_toBottomOf="@+id/ImageViewInCompletedTasks"
-                                    app:layout_constraintStart_toStartOf="@+id/TextViewInCompletedTasks"
-                                    app:layout_constraintTop_toBottomOf="@+id/TextViewInCompletedTasks" />
-
-                            </androidx.constraintlayout.widget.ConstraintLayout>
-                        </LinearLayout>
-                    </LinearLayout>
-
-                    <!--4th Linear Layout-->
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="80dp"
-                        android:orientation="vertical">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="0dp"
-                            android:orientation="horizontal">
-
-                            <androidx.constraintlayout.widget.ConstraintLayout
-                                android:layout_width="0dp"
-                                android:layout_height="70dp"
-                                android:layout_weight="0.5"
-                                android:layout_marginStart="32dp"
-                                android:layout_marginEnd="8dp"
-                                android:background="@drawable/cat_background">
-
-                                <ImageView
-                                    android:id="@+id/ImageViewAcceptedTasks"
-                                    android:layout_width="45dp"
-                                    android:layout_height="45dp"
-                                    android:layout_marginEnd="8dp"
-                                    app:layout_constraintBottom_toBottomOf="parent"
-                                    app:layout_constraintEnd_toEndOf="parent"
-                                    app:layout_constraintTop_toTopOf="parent"
-                                    app:srcCompat="@drawable/accept" />
-
-                                <TextView
-                                    android:id="@+id/TextViewAcceptTasks"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="16dp"
-                                    android:text="Accepted"
-                                    android:textColor="@color/white"
-                                    android:textSize="16sp"
-                                    android:textStyle="bold"
-                                    app:layout_constraintBottom_toBottomOf="parent"
-                                    app:layout_constraintStart_toStartOf="parent"
-                                    app:layout_constraintTop_toTopOf="parent" />
-
-                                <TextView
-                                    android:id="@+id/TextViewAcceptTasksCount"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="0dp"
-                                    android:text="Count"
-                                    android:textColor="@color/white"
-                                    android:textSize="16sp"
-                                    android:textStyle="bold"
-                                    app:layout_constraintBottom_toBottomOf="@+id/ImageViewAcceptedTasks"
-                                    app:layout_constraintStart_toStartOf="@+id/TextViewAcceptTasks"
-                                    app:layout_constraintTop_toBottomOf="@+id/TextViewAcceptTasks" />
-                            </androidx.constraintlayout.widget.ConstraintLayout>
-
-                            <androidx.constraintlayout.widget.ConstraintLayout
-                                android:layout_width="0dp"
-                                android:layout_height="70dp"
-                                android:layout_weight="0.5"
-                                android:layout_marginStart="8dp"
-                                android:layout_marginEnd="32dp"
-                                android:background="@drawable/cat_background">
-
-                                <ImageView
-                                    android:id="@+id/ImageViewRejectedTasks"
-                                    android:layout_width="45dp"
-                                    android:layout_height="45dp"
-                                    android:layout_marginEnd="8dp"
-                                    app:layout_constraintBottom_toBottomOf="parent"
-                                    app:layout_constraintEnd_toEndOf="parent"
-                                    app:layout_constraintTop_toTopOf="parent"
-                                    app:srcCompat="@drawable/rejected"/>
-
-                                <TextView
-                                    android:id="@+id/TextViewRejectTasks"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="16dp"
-                                    app:layout_constraintBottom_toBottomOf="parent"
-                                    app:layout_constraintStart_toStartOf="parent"
-                                    app:layout_constraintTop_toTopOf="parent"
-                                    android:text="Rejected"
-                                    android:textStyle="bold"
-                                    android:textSize="16sp"
-                                    android:textColor="@color/white" />
-
-                                <TextView
-                                    android:id="@+id/TextViewRejectTasksCount"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="0dp"
-                                    android:text="Count"
-                                    android:textColor="@color/white"
-                                    android:textSize="16sp"
-                                    android:textStyle="bold"
-                                    app:layout_constraintBottom_toBottomOf="@+id/ImageViewRejectedTasks"
-                                    app:layout_constraintStart_toStartOf="@+id/TextViewRejectTasks"
-                                    app:layout_constraintTop_toBottomOf="@+id/TextViewRejectTasks" />
-                            </androidx.constraintlayout.widget.ConstraintLayout>
-                        </LinearLayout>
-                    </LinearLayout>
-
-
-
-
-
-
-
-
-
-
-
-
-                    <!--Graph-->
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <androidx.cardview.widget.CardView
-                            android:id="@+id/cardViewGraph"
-                            android:layout_width="match_parent"
-                            android:layout_height="220dp"
-                            android:layout_marginLeft="20dp"
-                            android:layout_marginRight="20dp"
-                            android:layout_marginTop="0dp"
-                            android:elevation="10dp"
-                            app:cardCornerRadius="10dp">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Your Performance"
-                                android:textSize="18sp"
-                                android:textStyle="bold"
-                                android:layout_marginLeft="15dp"
-                                android:textColor="@color/black"/>
-
-                            <!--Linear layout to display pie chart-->
-                            <!-- and details of pie chart-->
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:orientation="horizontal"
-                                android:weightSum="2">
-
-                                <!--Pie chart to display the data-->
-
-                                <org.eazegraph.lib.charts.PieChart
-                                    android:id="@+id/pie_chart"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:padding="6dp"
-                                    android:layout_weight="1"
-                                    android:layout_marginTop="30dp"
-                                    android:layout_marginLeft="1dp"
-                                    android:layout_marginBottom="15dp" />
-
-                                <!--Creating another linear layout-->
-                                <!-- to display pie chart details -->
-                                <LinearLayout
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:layout_marginLeft="20dp"
-                                    android:layout_marginTop="30dp"
-                                    android:layout_marginBottom="1dp"
-                                    android:orientation="vertical"
-                                    android:gravity="center_vertical">
-
-                                    <LinearLayout
-                                        android:layout_width="match_parent"
-                                        android:layout_height="20dp"
-                                        android:layout_gravity="center_vertical">
-
-                                        <!--View to Display the Total Tasks Icon-->
-                                        <View
-                                            android:layout_width="15dp"
-                                            android:layout_height="match_parent"
-                                            android:background="#DFFF00"/>
-
-                                        <!--Text View to display Total Tasks -->
-                                        <TextView
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:text="Opened Tasks"
-                                            android:paddingLeft="10dp"/>
-
-                                    </LinearLayout>
-
-                                    <!--Linear layout to display  Completed Tasks-->
-                                    <LinearLayout
-                                        android:layout_width="match_parent"
-                                        android:layout_height="20dp"
-                                        android:layout_gravity="center_vertical"
-                                        android:layout_marginTop="5dp">
-
-                                        <!--View to Display the  Completed Tasks Icon-->
-                                        <View
-                                            android:layout_width="15dp"
-                                            android:layout_height="match_parent"
-                                            android:background="#9DC44D"/>
-
-                                        <!--Text View to Display Completed Tasks Text -->
-                                        <TextView
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:text="Completed Tasks"
-                                            android:paddingLeft="10dp"/>
-
-                                    </LinearLayout>
-
-                                    <!--Linear Layout to Display In Progress Tasks-->
-                                    <LinearLayout
-                                        android:layout_width="match_parent"
-                                        android:layout_height="20dp"
-                                        android:layout_gravity="center_vertical"
-                                        android:layout_marginTop="5dp">
-
-                                        <!--View to Display the In Progress Tasks Icon-->
-                                        <View
-                                            android:layout_width="15dp"
-                                            android:layout_height="match_parent"
-                                            android:background="#FFBF00"/>
-
-                                        <!--Text view to display In Progress text -->
-                                        <TextView
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:text="In Progress Tasks"
-                                            android:paddingLeft="10dp"/>
-
-                                    </LinearLayout>
-
-                                    <!--Linear Layout to Display On Hold Tasks-->
-                                    <LinearLayout
-                                        android:layout_width="match_parent"
-                                        android:layout_height="20dp"
-                                        android:layout_gravity="center_vertical"
-                                        android:layout_marginTop="5dp">
-
-                                        <!--View to Display the On Hold Tasks Icon-->
-                                        <View
-                                            android:layout_width="15dp"
-                                            android:layout_height="match_parent"
-                                            android:background="#B5AC95"/>
-
-                                        <!--Text View to Display On Hold Tasks Text -->
-                                        <TextView
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:text="On Hold Tasks"
-                                            android:paddingLeft="10dp"/>
-                                    </LinearLayout>
-
-                                    <!--Linear layout to display  Rejected Tasks-->
-                                    <LinearLayout
-                                        android:layout_width="match_parent"
-                                        android:layout_height="20dp"
-                                        android:layout_gravity="center_vertical"
-                                        android:layout_marginTop="5dp">
-
-                                        <!--View to Display the  Rejected  Tasks Icon-->
-                                        <View
-                                            android:layout_width="15dp"
-                                            android:layout_height="match_parent"
-                                            android:background="#DE3163"/>
-
-                                        <!--Text View to Display Rejected Tasks Text -->
-                                        <TextView
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:text="Rejected Tasks"
-                                            android:paddingLeft="10dp"/>
-
-                                    </LinearLayout>
-
-                                    <!--Linear layout to display  Accepted Tasks-->
-                                    <LinearLayout
-                                        android:layout_width="match_parent"
-                                        android:layout_height="20dp"
-                                        android:layout_gravity="center_vertical"
-                                        android:layout_marginTop="5dp">
-
-                                        <!--View to Display the  Accepted  Tasks Icon-->
-                                        <View
-                                            android:layout_width="15dp"
-                                            android:layout_height="match_parent"
-                                            android:background="#FF7F50"/>
-
-                                        <!--Text View to Display Accepted Tasks Text -->
-                                        <TextView
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:text="Accepted Tasks"
-                                            android:paddingLeft="10dp"/>
-                                    </LinearLayout>
-
-
-                                    <!--Linear layout to display  Incompleted Tasks-->
-                                    <LinearLayout
-                                        android:layout_width="match_parent"
-                                        android:layout_height="20dp"
-                                        android:layout_gravity="center_vertical"
-                                        android:layout_marginTop="5dp">
-
-                                        <!--View to Display the  Incompleted  Tasks Icon-->
-                                        <View
-                                            android:layout_width="15dp"
-                                            android:layout_height="match_parent"
-                                            android:background="#40E0D0"/>
-
-                                        <!--Text View to Display Incompleted Tasks Text -->
-                                        <TextView
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:text="Incompleted Tasks"
-                                            android:paddingLeft="10dp"/>
-                                    </LinearLayout>
-
-                                </LinearLayout>
-                            </LinearLayout>
-                        </androidx.cardview.widget.CardView>
-                    </RelativeLayout>
-
-
-
-
-
-
-
-
-
-
-
-
-                </LinearLayout>
-            </ScrollView>
-
-            <!--BOTTOM NAVIGATION BAR-->
-
-            <androidx.coordinatorlayout.widget.CoordinatorLayout
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent">
-
-                <com.google.android.material.bottomappbar.BottomAppBar
-                    android:id="@+id/appbar"
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:layout_gravity="bottom"
-                    app:fabCradleMargin="8dp"
-                    app:fabCradleRoundedCornerRadius="50dp"
-                    app:fabCradleVerticalOffset="6dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
                         android:orientation="horizontal">
 
-                        <LinearLayout
+                        <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="0.2"
-                            android:orientation="vertical"
-                            android:visibility="visible">
+                            android:layout_height="70dp"
+                            android:layout_weight="0.5"
+                            android:layout_marginStart="32dp"
+                            android:layout_marginEnd="8dp"
+                            android:background="@drawable/cat_background">
 
                             <ImageView
-                                android:id="@+id/home"
-                                android:layout_width="30dp"
-                                android:layout_height="30dp"
-                                android:layout_weight="1"
-                                android:layout_gravity="center"
-                                android:src="@drawable/baseline_home_24" />
-                        </LinearLayout>
+                                android:id="@+id/ImageViewAllTasks"
+                                android:layout_width="45dp"
+                                android:layout_height="45dp"
+                                android:layout_marginEnd="8dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:srcCompat="@drawable/boxes2" />
 
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="0.2"
-                            android:orientation="vertical"
-                            android:visibility="visible">
-
-                            <ImageView
-                                android:id="@+id/bookmark"
-                                android:layout_width="30dp"
-                                android:layout_height="30dp"
-                                android:layout_weight="1"
-                                android:layout_gravity="center"
-                                android:src="@drawable/baseline_bookmark_24" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="0.2"
-                            android:orientation="vertical"
-                            android:visibility="visible">
-
-                            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                                android:layout_width="60dp"
+                            <TextView
+                                android:id="@+id/TextViewAllTasks"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:backgroundTint="#9DC44D"
-                                android:src="@drawable/donutchart"
-                                app:layout_anchor="@+id/appbar"
-                                app:layout_anchorGravity="center"
-                                app:maxImageSize="30dp"
-                                app:tint="@color/white"
-                                android:contentDescription="TODO" />
-                        </LinearLayout>
+                                android:layout_marginStart="16dp"
+                                android:text="Total"
+                                android:textColor="@color/white"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
 
-                        <LinearLayout
+
+                            <TextView
+                                android:id="@+id/TextViewAllTasksCount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="0dp"
+                                android:text="Count"
+                                android:textColor="@color/white"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="@+id/ImageViewAllTasks"
+                                app:layout_constraintStart_toStartOf="@+id/TextViewAllTasks"
+                                app:layout_constraintTop_toBottomOf="@+id/TextViewAllTasks" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="0.2"
-                            android:orientation="vertical"
-                            android:visibility="visible">
+                            android:layout_height="70dp"
+                            android:layout_weight="0.5"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginEnd="32dp"
+                            android:background="@drawable/cat_background">
 
                             <ImageView
-                                android:id="@+id/notifications"
-                                android:layout_width="30dp"
-                                android:layout_height="30dp"
-                                android:layout_weight="1"
-                                android:layout_gravity="center"
-                                android:src="@drawable/baseline_notifications_24"/>
-                        </LinearLayout>
+                                android:id="@+id/ImageViewOpenedTasks"
+                                android:layout_width="45dp"
+                                android:layout_height="45dp"
+                                android:layout_marginEnd="8dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:srcCompat="@drawable/open"/>
 
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="0.2"
-                            android:orientation="vertical"
-                            android:visibility="visible">
+                            <TextView
+                                android:id="@+id/TextViewOpenedTasks"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                android:text="Opened"
+                                android:textStyle="bold"
+                                android:textSize="16sp"
+                                android:textColor="@color/white" />
 
-                            <ImageView
-                                android:id="@+id/profile"
-                                android:layout_width="30dp"
-                                android:layout_height="30dp"
-                                android:layout_weight="1"
-                                android:layout_gravity="center"
-                                android:src="@drawable/baseline_person_24_black" />
-                        </LinearLayout>
+                            <TextView
+                                android:id="@+id/TextViewOpenedTasksCount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="0dp"
+                                android:text="Count"
+                                android:textColor="@color/white"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="@+id/ImageViewOpenedTasks"
+                                app:layout_constraintStart_toStartOf="@+id/TextViewOpenedTasks"
+                                app:layout_constraintTop_toBottomOf="@+id/TextViewOpenedTasks" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
                     </LinearLayout>
-                </com.google.android.material.bottomappbar.BottomAppBar>
+                </LinearLayout>
 
-            </androidx.coordinatorlayout.widget.CoordinatorLayout>
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                <!--2nd Linear Layout-->
 
-        <com.google.android.material.navigation.NavigationView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:id="@+id/navigationView"
-            app:headerLayout="@layout/header_menu"
-            app:menu="@menu/main_menu"
-            android:fitsSystemWindows="true"
-            android:layout_gravity="start"
-            tools:ignore="VisualLintBounds">
-        </com.google.android.material.navigation.NavigationView>
-    </androidx.drawerlayout.widget.DrawerLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="0dp"
+                        android:orientation="horizontal">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="0dp"
+                            android:layout_height="70dp"
+                            android:layout_weight="0.5"
+                            android:layout_marginStart="32dp"
+                            android:layout_marginEnd="8dp"
+                            android:background="@drawable/cat_background">
+
+                            <ImageView
+                                android:id="@+id/ImageViewInProgressTasks"
+                                android:layout_width="45dp"
+                                android:layout_height="45dp"
+                                android:layout_marginEnd="8dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:srcCompat="@drawable/inprogress" />
+
+                            <TextView
+                                android:id="@+id/TextViewInprogressTasks"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:text="In Progress"
+                                android:textColor="@color/white"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/TextViewInprogressTasksCount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="0dp"
+                                android:text="Count"
+                                android:textColor="@color/white"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="@+id/ImageViewInProgressTasks"
+                                app:layout_constraintStart_toStartOf="@+id/TextViewInprogressTasks"
+                                app:layout_constraintTop_toBottomOf="@+id/TextViewInprogressTasks" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="0dp"
+                            android:layout_height="70dp"
+                            android:layout_weight="0.5"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginEnd="32dp"
+                            android:background="@drawable/cat_background">
+
+                            <ImageView
+                                android:id="@+id/ImageViewOnHoldTasks"
+                                android:layout_width="45dp"
+                                android:layout_height="45dp"
+                                android:layout_marginEnd="8dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:srcCompat="@drawable/holdtasks"/>
+
+                            <TextView
+                                android:id="@+id/TextViewOnHoldTasks"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                android:text="On Hold"
+                                android:textStyle="bold"
+                                android:textSize="16sp"
+                                android:textColor="@color/white" />
+
+                            <TextView
+                                android:id="@+id/TextViewOnHoldTasksCount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="0dp"
+                                android:text="Count"
+                                android:textColor="@color/white"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="@+id/ImageViewOnHoldTasks"
+                                app:layout_constraintStart_toStartOf="@+id/TextViewOnHoldTasks"
+                                app:layout_constraintTop_toBottomOf="@+id/TextViewOnHoldTasks" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <!--3rd Linear Layout-->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="0dp"
+                        android:orientation="horizontal">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="0dp"
+                            android:layout_height="70dp"
+                            android:layout_weight="0.5"
+                            android:layout_marginStart="32dp"
+                            android:layout_marginEnd="8dp"
+                            android:background="@drawable/cat_background">
+
+                            <ImageView
+                                android:id="@+id/ImageViewCompletedTasks"
+                                android:layout_width="45dp"
+                                android:layout_height="45dp"
+                                android:layout_marginEnd="8dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:srcCompat="@drawable/alltotal" />
+
+                            <TextView
+                                android:id="@+id/TextViewCompletedTasks"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:text="Completed"
+                                android:textColor="@color/white"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+
+                            <TextView
+                                android:id="@+id/TextViewCompletedTasksCount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="0dp"
+                                android:text="Count"
+                                android:textColor="@color/white"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="@+id/ImageViewCompletedTasks"
+                                app:layout_constraintStart_toStartOf="@+id/TextViewCompletedTasks"
+                                app:layout_constraintTop_toBottomOf="@+id/TextViewCompletedTasks" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="0dp"
+                            android:layout_height="70dp"
+                            android:layout_weight="0.5"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginEnd="32dp"
+                            android:background="@drawable/cat_background">
+
+                            <ImageView
+                                android:id="@+id/ImageViewInCompletedTasks"
+                                android:layout_width="45dp"
+                                android:layout_height="45dp"
+                                android:layout_marginEnd="8dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:srcCompat="@drawable/warningstar"/>
+
+                            <TextView
+                                android:id="@+id/TextViewInCompletedTasks"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                android:text="Incompleted"
+                                android:textStyle="bold"
+                                android:textSize="16sp"
+                                android:textColor="@color/white" />
+
+                            <TextView
+                                android:id="@+id/TextViewInCompletedTasksCount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="0dp"
+                                android:text="Count"
+                                android:textColor="@color/white"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="@+id/ImageViewInCompletedTasks"
+                                app:layout_constraintStart_toStartOf="@+id/TextViewInCompletedTasks"
+                                app:layout_constraintTop_toBottomOf="@+id/TextViewInCompletedTasks" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!--4th Linear Layout-->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="0dp"
+                        android:orientation="horizontal">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="0dp"
+                            android:layout_height="70dp"
+                            android:layout_weight="0.5"
+                            android:layout_marginStart="32dp"
+                            android:layout_marginEnd="8dp"
+                            android:background="@drawable/cat_background">
+
+                            <ImageView
+                                android:id="@+id/ImageViewAcceptedTasks"
+                                android:layout_width="45dp"
+                                android:layout_height="45dp"
+                                android:layout_marginEnd="8dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:srcCompat="@drawable/accept" />
+
+                            <TextView
+                                android:id="@+id/TextViewAcceptTasks"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:text="Accepted"
+                                android:textColor="@color/white"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/TextViewAcceptTasksCount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="0dp"
+                                android:text="Count"
+                                android:textColor="@color/white"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="@+id/ImageViewAcceptedTasks"
+                                app:layout_constraintStart_toStartOf="@+id/TextViewAcceptTasks"
+                                app:layout_constraintTop_toBottomOf="@+id/TextViewAcceptTasks" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="0dp"
+                            android:layout_height="70dp"
+                            android:layout_weight="0.5"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginEnd="32dp"
+                            android:background="@drawable/cat_background">
+
+                            <ImageView
+                                android:id="@+id/ImageViewRejectedTasks"
+                                android:layout_width="45dp"
+                                android:layout_height="45dp"
+                                android:layout_marginEnd="8dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:srcCompat="@drawable/rejected"/>
+
+                            <TextView
+                                android:id="@+id/TextViewRejectTasks"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                android:text="Rejected"
+                                android:textStyle="bold"
+                                android:textSize="16sp"
+                                android:textColor="@color/white" />
+
+                            <TextView
+                                android:id="@+id/TextViewRejectTasksCount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="0dp"
+                                android:text="Count"
+                                android:textColor="@color/white"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="@+id/ImageViewRejectedTasks"
+                                app:layout_constraintStart_toStartOf="@+id/TextViewRejectTasks"
+                                app:layout_constraintTop_toBottomOf="@+id/TextViewRejectTasks" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+                <!--Graph-->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardViewGraph"
+                        android:layout_width="match_parent"
+                        android:layout_height="215dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginTop="4dp"
+                        android:elevation="10dp"
+                        app:cardCornerRadius="10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Task Analytics on Area"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:layout_marginLeft="15dp"
+                            android:textColor="@color/black"/>
+
+                        <!--Linear layout to display pie chart-->
+                        <!-- and details of pie chart-->
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:weightSum="2">
+
+                            <!--Pie chart to display the data-->
+
+                            <org.eazegraph.lib.charts.PieChart
+                                android:id="@+id/pie_chart"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:padding="6dp"
+                                android:layout_weight="1"
+                                android:layout_marginTop="30dp"
+                                android:layout_marginLeft="1dp"
+                                android:layout_marginBottom="15dp" />
+
+                            <!--Creating another linear layout-->
+                            <!-- to display pie chart details -->
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginTop="30dp"
+                                android:layout_marginBottom="1dp"
+                                android:orientation="vertical"
+                                android:gravity="center_vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="20dp"
+                                    android:layout_gravity="center_vertical">
+
+                                    <!--View to Display the Total Tasks Icon-->
+                                    <View
+                                        android:layout_width="15dp"
+                                        android:layout_height="match_parent"
+                                        android:background="#DFFF00"/>
+
+                                    <!--Text View to display Total Tasks -->
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Opened Tasks"
+                                        android:paddingLeft="10dp"/>
+
+                                </LinearLayout>
+
+                                <!--Linear layout to display  Completed Tasks-->
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="20dp"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginTop="5dp">
+
+                                    <!--View to Display the  Completed Tasks Icon-->
+                                    <View
+                                        android:layout_width="15dp"
+                                        android:layout_height="match_parent"
+                                        android:background="#9DC44D"/>
+
+                                    <!--Text View to Display Completed Tasks Text -->
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Completed Tasks"
+                                        android:paddingLeft="10dp"/>
+
+                                </LinearLayout>
+
+                                <!--Linear Layout to Display In Progress Tasks-->
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="20dp"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginTop="5dp">
+
+                                    <!--View to Display the In Progress Tasks Icon-->
+                                    <View
+                                        android:layout_width="15dp"
+                                        android:layout_height="match_parent"
+                                        android:background="#FFBF00"/>
+
+                                    <!--Text view to display In Progress text -->
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="In Progress Tasks"
+                                        android:paddingLeft="10dp"/>
+
+                                </LinearLayout>
+
+                                <!--Linear Layout to Display On Hold Tasks-->
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="20dp"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginTop="5dp">
+
+                                    <!--View to Display the On Hold Tasks Icon-->
+                                    <View
+                                        android:layout_width="15dp"
+                                        android:layout_height="match_parent"
+                                        android:background="#B5AC95"/>
+
+                                    <!--Text View to Display On Hold Tasks Text -->
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="On Hold Tasks"
+                                        android:paddingLeft="10dp"/>
+                                </LinearLayout>
+
+                                <!--Linear layout to display  Rejected Tasks-->
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="20dp"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginTop="5dp">
+
+                                    <!--View to Display the  Rejected  Tasks Icon-->
+                                    <View
+                                        android:layout_width="15dp"
+                                        android:layout_height="match_parent"
+                                        android:background="#DE3163"/>
+
+                                    <!--Text View to Display Rejected Tasks Text -->
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Rejected Tasks"
+                                        android:paddingLeft="10dp"/>
+
+                                </LinearLayout>
+
+                                <!--Linear layout to display  Accepted Tasks-->
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="20dp"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginTop="5dp">
+
+                                    <!--View to Display the  Accepted  Tasks Icon-->
+                                    <View
+                                        android:layout_width="15dp"
+                                        android:layout_height="match_parent"
+                                        android:background="#FF7F50"/>
+
+                                    <!--Text View to Display Accepted Tasks Text -->
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Accepted Tasks"
+                                        android:paddingLeft="10dp"/>
+                                </LinearLayout>
+
+
+                                <!--Linear layout to display  Incompleted Tasks-->
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="20dp"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginTop="5dp">
+
+                                    <!--View to Display the  Incompleted  Tasks Icon-->
+                                    <View
+                                        android:layout_width="15dp"
+                                        android:layout_height="match_parent"
+                                        android:background="#40E0D0"/>
+
+                                    <!--Text View to Display Incompleted Tasks Text -->
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Incompleted Tasks"
+                                        android:paddingLeft="10dp"/>
+                                </LinearLayout>
+
+                            </LinearLayout>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                </RelativeLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+            </LinearLayout>
+        </ScrollView>
+
+        <!--BOTTOM NAVIGATION BAR-->
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <com.google.android.material.bottomappbar.BottomAppBar
+                android:id="@+id/appbar"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_gravity="bottom"
+                app:fabCradleMargin="8dp"
+                app:fabCradleRoundedCornerRadius="50dp"
+                app:fabCradleVerticalOffset="6dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.2"
+                        android:orientation="vertical"
+                        android:visibility="visible">
+
+                        <ImageView
+                            android:id="@+id/home"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_weight="1"
+                            android:layout_gravity="center"
+                            android:src="@drawable/baseline_home_24" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.2"
+                        android:orientation="vertical"
+                        android:visibility="visible">
+
+                        <ImageView
+                            android:id="@+id/bookmark"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_weight="1"
+                            android:layout_gravity="center"
+                            android:src="@drawable/baseline_bookmark_24" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.2"
+                        android:orientation="vertical"
+                        android:visibility="visible">
+
+                        <com.google.android.material.floatingactionbutton.FloatingActionButton
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="#9DC44D"
+                            android:src="@drawable/donutchart"
+                            app:layout_anchor="@+id/appbar"
+                            app:layout_anchorGravity="center"
+                            app:maxImageSize="30dp"
+                            app:tint="@color/white"
+                            android:contentDescription="TODO" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.2"
+                        android:orientation="vertical"
+                        android:visibility="visible">
+
+                        <ImageView
+                            android:id="@+id/notifications"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_weight="1"
+                            android:layout_gravity="center"
+                            android:src="@drawable/baseline_notifications_24"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.2"
+                        android:orientation="vertical"
+                        android:visibility="visible">
+
+                        <ImageView
+                            android:id="@+id/profile"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_weight="1"
+                            android:layout_gravity="center"
+                            android:src="@drawable/baseline_person_24_black" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.bottomappbar.BottomAppBar>
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/navigationView"
+        app:headerLayout="@layout/header_menu"
+        app:menu="@menu/main_menu"
+        android:fitsSystemWindows="true"
+        android:layout_gravity="start"
+        tools:ignore="VisualLintBounds">
+    </com.google.android.material.navigation.NavigationView>
+
+</androidx.drawerlayout.widget.DrawerLayout>

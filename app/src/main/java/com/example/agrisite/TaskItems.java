@@ -2,17 +2,18 @@ package com.example.agrisite;
 
 public class TaskItems {
     private String key;
-    String title, description, startdate, enddate, taskstatus, fullName,VSDomainFromDB, userIDFromDB;
+    String title, description, startdate, enddate, taskStatus, fullName, DivisionFromDB, VSDomainFromDB,userIDFromDB;
 
-    public TaskItems(String uniqueKey,String title, String description, String startdate, String enddate, String taskstatus,String fullName ,String VSDomainFromDB, String userIDFromDB ) {
+    public TaskItems(String uniqueKey,String title, String description, String startdate, String enddate, String taskStatus,String fullName , String DivisionFromDB,String VSDomainFromDB,String userIDFromDB ) {
 
         this.key = uniqueKey;
         this.title = title;
         this.description = description;
         this.startdate = startdate;
         this.enddate = enddate;
-        this.taskstatus = taskstatus;
+        this.taskStatus = taskStatus;
         this.fullName = fullName;
+        this.DivisionFromDB = DivisionFromDB;
         this.VSDomainFromDB = VSDomainFromDB;
         this.userIDFromDB =  userIDFromDB;
     }
@@ -55,11 +56,11 @@ public class TaskItems {
     }
 
     public String getTaskstatus() {
-        return taskstatus;
+        return taskStatus;
     }
 
-    public void setTaskstatus(String taskstatus) {
-        this.taskstatus = taskstatus;
+    public void setTaskstatus(String taskStatus) {
+        this.taskStatus = taskStatus;
     }
 
     public String getKey() {
@@ -96,4 +97,11 @@ public class TaskItems {
     }
 
 
+    public String getDivisionFromDB() {
+        return DivisionFromDB;
+    }
+
+    public void setDivisionFromDB(String divisionFromDB) {
+        DivisionFromDB = divisionFromDB;
+    }
 }

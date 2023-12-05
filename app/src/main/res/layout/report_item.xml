@@ -12,7 +12,7 @@
         android:layout_height="90dp"
         android:id="@+id/profileImg"
         android:layout_marginTop="30dp"
-        android:src="@drawable/profile_admin"
+        android:src="@drawable/profile_fo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>

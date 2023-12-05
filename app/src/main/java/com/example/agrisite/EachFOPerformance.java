@@ -2,28 +2,13 @@ package com.example.agrisite;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Context;
 import android.content.Intent;
-import android.graphics.Canvas;
 import android.graphics.Color;
-import android.graphics.Paint;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
-import android.webkit.WebView;
 import android.widget.Button;
-import android.widget.CalendarView;
 import android.widget.TextView;
 
-import com.github.mikephil.charting.animation.Easing;
-import com.github.mikephil.charting.charts.LineChart;
-import com.github.mikephil.charting.components.XAxis;
-import com.github.mikephil.charting.data.Entry;
-import com.github.mikephil.charting.data.LineData;
-import com.github.mikephil.charting.data.LineDataSet;
-import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
-import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -34,41 +19,12 @@ import com.google.firebase.database.ValueEventListener;
 import org.eazegraph.lib.charts.PieChart;
 import org.eazegraph.lib.models.PieModel;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Locale;
-import java.util.Objects;
-
 public class EachFOPerformance extends AppCompatActivity {
     private PieChart chart;
     String FIELD_OFFICER_NAME, FIELD_OFFICER_ID;
     int totalcount = 0, openedCount = 0, inProgressCount = 0, onHoldCount = 0, completedCount = 0, incompletedCount = 0, rejectedcount = 0, acceptedCount = 0;
 
     Button BtnShowAnalytics;
-    public static class CustomView extends CalendarView {
-
-        public CustomView(@NonNull Context context) {
-            super(context);
-        }
-
-        @Override
-        protected void onDraw(Canvas canvas) {
-
-            Paint paint = new Paint();
-            paint.setColor(Color.BLACK);
-            paint.setStrokeWidth(2);
-
-            canvas.drawLine(0, 0, 100, 100, paint);
-            super.onDraw(canvas);
-        }
-
-
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,12 +33,15 @@ public class EachFOPerformance extends AppCompatActivity {
 
         showUserData();
 
+        ((TextView) findViewById(R.id.TaskAnalytics_Title)).setText(FIELD_OFFICER_NAME + " - " + "Task Analytics");
         chart = findViewById(R.id.pie_chart);
         BtnShowAnalytics =findViewById(R.id.BtnShowAnalytics);
+
 
         //Checking that the userID (userIDFromDB) coming from the DB equals to the FIELD_OFFICER_ID coming from the intent
         DatabaseReference tasksRef = FirebaseDatabase.getInstance().getReference("Tasks");
         Query query = tasksRef.orderByChild("userIDFromDB").equalTo(FIELD_OFFICER_ID);
+
         query.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -125,11 +84,11 @@ public class EachFOPerformance extends AppCompatActivity {
                 addToPieChart();
             }
 
-                @Override
-                public void onCancelled(@NonNull DatabaseError error) {
-                    // Handle database error
-                }
-            });
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                // Handle database error
+            }
+        });
 
         BtnShowAnalytics.setOnClickListener(v -> {
             Intent i = new Intent(EachFOPerformance.this, AdminAnalytics.class);
@@ -151,6 +110,7 @@ public class EachFOPerformance extends AppCompatActivity {
         chart.addPieSlice(new PieModel("Incomplete Count ", incompletedCount, Color.parseColor("#40E0D0")));
         chart.startAnimation();
     }
+
     //Get the FIELD_OFFICER_NAME through the intent coming from DivisionRecyclerViewAdapter
     public void showUserData() {
         Intent intent = getIntent();
