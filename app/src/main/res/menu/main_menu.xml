@@ -3,10 +3,10 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <group android:checkableBehavior="single">
-        <item android:id="@+id/nav_home" android:title="Home" android:icon="@drawable/baseline_home_24"/>
+        <item android:id="@+id/nav_home" android:title="Dashboard" android:icon="@drawable/baseline_home_24"/>
         <item android:id="@+id/nav_addfo" android:title="Register User" android:icon="@drawable/baseline_person_add_black"/>
         <item android:id="@+id/nav_taskboard" android:title="New Tasks" android:icon="@drawable/baseline_ballot_24"/>
         <item android:id="@+id/nav_FOList" android:title="My Division" android:icon="@drawable/baseline_diversity_1_24"/>
-        <item android:id="@+id/nav_profile" android:title="Profile" android:icon="@drawable/baseline_account_box_24"/>
+        <item android:id="@+id/nav_profile" android:title="My Profile" android:icon="@drawable/baseline_account_box_24"/>
     </group>
 </menu>

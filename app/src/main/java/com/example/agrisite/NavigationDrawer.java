@@ -213,7 +213,7 @@ public class NavigationDrawer extends AppCompatActivity {
                     i.putExtra("selectedVSDomain", VSDomainFromDB);
                     i.putExtra("userID", userIDFromDB);
 
-                    Toast.makeText(NavigationDrawer.this, "Selected Division : " +DivisionFromDB, Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(NavigationDrawer.this, "Selected Division : " +DivisionFromDB, Toast.LENGTH_SHORT).show();
 
                     startActivity(i);
 

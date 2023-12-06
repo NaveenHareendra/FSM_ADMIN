@@ -785,7 +785,7 @@
                             android:layout_height="30dp"
                             android:layout_weight="1"
                             android:layout_gravity="center"
-                            android:src="@drawable/baseline_bookmark_24" />
+                            android:src="@drawable/baseline_person_add_black" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -821,7 +821,7 @@
                             android:layout_height="30dp"
                             android:layout_weight="1"
                             android:layout_gravity="center"
-                            android:src="@drawable/baseline_notifications_24"/>
+                            android:src="@drawable/baseline_ballot_24"/>
                     </LinearLayout>
 
                     <LinearLayout

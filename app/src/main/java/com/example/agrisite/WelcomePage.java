@@ -125,7 +125,7 @@ public class WelcomePage extends AppCompatActivity {
                             i.putExtra("selectedDivision", DivisionFromDB);
                             i.putExtra("userID", userIDFromDB);
 
-                            Toast.makeText(WelcomePage.this, "Selected Division : " +DivisionFromDB, Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(WelcomePage.this, "Selected Division : " +DivisionFromDB, Toast.LENGTH_SHORT).show();
 
                             startActivity(i);
 
